@@ -1,0 +1,51 @@
+export const CANONICAL_PAYMENT_ATTEMPT_STATUSES = [
+  "ATTEMPT_CREATED",
+  "CHECKOUT_SESSION_STARTED",
+  "PROVIDER_REDIRECT_READY",
+  "PAYER_REDIRECTED",
+  "AWAITING_PAYER_ACTION",
+  "AWAITING_PROVIDER_CONFIRMATION",
+  "PENDING_MANUAL_REVIEW",
+  "APPROVED",
+  "REJECTED",
+  "FAILED_TO_CREATE",
+  "FAILED_PROCESSING",
+  "ABANDONED_BY_PAYER",
+  "EXPIRED",
+  "CANCELLED",
+  "REVERSED_OR_NULLIFIED"
+] as const;
+
+export type CanonicalPaymentAttemptStatus =
+  (typeof CANONICAL_PAYMENT_ATTEMPT_STATUSES)[number];
+
+export const TERMINAL_PAYMENT_ATTEMPT_STATUSES = new Set<CanonicalPaymentAttemptStatus>([
+  "APPROVED",
+  "REJECTED",
+  "FAILED_TO_CREATE",
+  "FAILED_PROCESSING",
+  "ABANDONED_BY_PAYER",
+  "EXPIRED",
+  "CANCELLED",
+  "REVERSED_OR_NULLIFIED"
+]);
+
+export const PAYMENT_ORDER_STATUSES = [
+  "DRAFT",
+  "OPEN",
+  "IN_PROGRESS",
+  "APPROVED",
+  "REJECTED",
+  "FAILED",
+  "EXPIRED",
+  "CANCELLED",
+  "REVERSED"
+] as const;
+
+export type PaymentOrderStatus = (typeof PAYMENT_ORDER_STATUSES)[number];
+
+export function isTerminalAttemptStatus(
+  status: CanonicalPaymentAttemptStatus
+): boolean {
+  return TERMINAL_PAYMENT_ATTEMPT_STATUSES.has(status);
+}
