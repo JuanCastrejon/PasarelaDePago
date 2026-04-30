@@ -40,6 +40,13 @@ Servir como punto de entrada unico para navegar el repositorio como paquete cohe
 - [Tasks tecnicas iniciales](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/tasks-tecnicas-iniciales1.md)
 - [Roadmap por fases](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/roadmap-por-fases1.md)
 
+### Paso 6 - Entender el sistema de trabajo
+
+- [Sistema de trabajo multiagente](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sistema-de-trabajo-multiagente1.md)
+- [SDD, OpenSpec y Engram](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sdd-openspec-engram1.md)
+- [Gobernanza de skills y fuentes](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/gobernanza-de-skills-y-fuentes1.md)
+- [Azure DevOps y gobierno del proyecto](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/azure-devops-y-gobierno-del-proyecto1.md)
+
 ## 3. Mapa por seccion
 
 ## 3.1 Dominio
@@ -75,10 +82,20 @@ Servir como punto de entrada unico para navegar el repositorio como paquete cohe
 
 - [Azure DevOps y gobierno del proyecto](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/azure-devops-y-gobierno-del-proyecto1.md)
 - [Consolidacion documental para inicio del proyecto](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/consolidacion-documental-para-inicio-del-proyecto1.md)
+- [Sistema de trabajo multiagente](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sistema-de-trabajo-multiagente1.md)
+- [SDD, OpenSpec y Engram](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sdd-openspec-engram1.md)
+- [Gobernanza de skills y fuentes](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/gobernanza-de-skills-y-fuentes1.md)
 
 ## 3.7 Skills del proyecto
 
 - [Catalogo de skills del proyecto](/C:/Users/juand/source/repos/PasarelaDePago/docs/skills/catalogo-de-skills-del-proyecto.md)
+
+## 3.8 Operacion del repo
+
+- [AGENTS.md](/C:/Users/juand/source/repos/PasarelaDePago/AGENTS.md)
+- [.github/AGENTS.md](/C:/Users/juand/source/repos/PasarelaDePago/.github/AGENTS.md)
+- [.github/copilot-instructions.md](/C:/Users/juand/source/repos/PasarelaDePago/.github/copilot-instructions.md)
+- [.github/VERSIONADO.md](/C:/Users/juand/source/repos/PasarelaDePago/.github/VERSIONADO.md)
 
 ## 4. Estado editorial
 

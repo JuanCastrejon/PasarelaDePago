@@ -17,6 +17,8 @@ La base fundacional del proyecto ya esta creada en dos capas:
 - [Modelo de dominio canonico](/C:/Users/juand/source/repos/PasarelaDePago/docs/dominio/modelo-de-dominio-canonico1.md)
 - [Matriz de capacidades por proveedor](/C:/Users/juand/source/repos/PasarelaDePago/docs/matriz/matriz-de-capacidades-por-proveedor1.md)
 - [Matriz canonica de estados por proveedor](/C:/Users/juand/source/repos/PasarelaDePago/docs/matriz/matriz-canonica-de-estados-por-proveedor1.md)
+- [Sistema de trabajo multiagente](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sistema-de-trabajo-multiagente1.md)
+- [Gobernanza de skills y fuentes](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/gobernanza-de-skills-y-fuentes1.md)
 - [Roadmap por fases](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/roadmap-por-fases1.md)
 
 ## Slice tecnica inicial
@@ -28,6 +30,14 @@ La primera base de implementacion se encuentra en `src/` e incluye:
 - matriz de capacidades en codigo
 - normalizacion de estados crudos por proveedor
 - politica inicial de retry y fallback
+
+## Flujo operativo del repo
+
+El repositorio ya incluye una capa interna de operacion en:
+
+- `.github/` para instrucciones, skills, prompts, versionado, PR template y CI
+- `.agents/workflows/` para gitflow, multiagente, skills externas y QA
+- `docs/agents/` para tracker, labels y layout del dominio
 
 ## Comandos
 
