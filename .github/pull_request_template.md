@@ -6,9 +6,11 @@ Describe que cambia este PR.
 
 - [ ] Documentacion
 - [ ] Dominio / arquitectura
+- [ ] Monorepo / stack bootstrap
 - [ ] Integracion de proveedor
 - [ ] Backoffice / operacion
 - [ ] CI / tooling
+- [ ] Azure DevOps / gobierno
 
 ## Alcance
 
@@ -21,6 +23,7 @@ Describe que cambia este PR.
 - [ ] `npm run typecheck`
 - [ ] `npm run build`
 - [ ] Sin secretos, evidencia privada ni artefactos temporales
+- [ ] Documentacion viva sincronizada
 
 ## Evidencia
 

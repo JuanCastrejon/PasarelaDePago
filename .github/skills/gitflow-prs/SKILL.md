@@ -12,6 +12,7 @@ description: "Define flujo de ramas, commits y PRs para PasarelaDePago. Usar cua
 3. Toda rama de trabajo nace desde `develop`.
 4. Solo se mergea por PR.
 5. Los commits deben ser atomicos y en espanol.
+6. El body del PR debe ir por archivo UTF-8 si se usa CLI.
 
 ## Checklist previo
 
@@ -19,6 +20,7 @@ description: "Define flujo de ramas, commits y PRs para PasarelaDePago. Usar cua
 - revisar `git diff --staged`
 - excluir archivos locales o privados
 - ejecutar validaciones minimas
+- confirmar que la documentacion viva acompana el cambio si era necesario
 
 ## Convenciones
 

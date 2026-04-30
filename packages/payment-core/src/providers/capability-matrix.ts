@@ -1,5 +1,5 @@
-import type { PaymentMethodFamily } from "../domain/payment-method-family.js";
-import type { ProviderCode } from "../domain/provider.js";
+import type { PaymentMethodFamily } from "../domain/payment-method-family";
+import type { ProviderCode } from "../domain/provider";
 
 export type EvidenceLevel = "CONFIRMED" | "PARTIAL" | "NOT_CONFIRMED";
 

@@ -29,5 +29,5 @@ El repositorio usa layout `single-context` con `CONTEXT.md` en la raiz y documen
 ## Referencias rapidas
 
 - Registro operativo completo: `.github/AGENTS.md`
-- Indice maestro: `docs/indice-maestro1.md`
-- Sistema multiagente: `docs/proceso/sistema-de-trabajo-multiagente1.md`
+- Indice maestro: `docs/indice-maestro2.md`
+- Sistema multiagente: `docs/proceso/sistema-de-trabajo-multiagente2.md`

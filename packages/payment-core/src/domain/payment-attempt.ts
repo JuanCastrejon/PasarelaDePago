@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
 
-import type { PaymentMethodFamily } from "./payment-method-family.js";
-import type { CanonicalPaymentAttemptStatus } from "./payment-status.js";
-import type { ProviderCode } from "./provider.js";
+import type { PaymentMethodFamily } from "./payment-method-family";
+import type { CanonicalPaymentAttemptStatus } from "./payment-status";
+import type { ProviderCode } from "./provider";
 
 export const ATTEMPT_ORIGINS = [
   "PRIMARY",

@@ -23,6 +23,14 @@ Separar siempre:
 - quien valida
 - que skill gobierna cada fase
 
+## Contrato minimo por handoff
+
+- objetivo concreto
+- artefacto de entrada
+- skill o instruccion aplicable
+- salida esperada
+- criterio de cierre
+
 ## Referencia
 
-Leer `docs/proceso/sistema-de-trabajo-multiagente1.md`.
+Leer la version mas reciente de `docs/proceso/sistema-de-trabajo-multiagente*.md`.

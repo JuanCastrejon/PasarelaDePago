@@ -1,0 +1,3 @@
+-- Workspace bootstrap placeholder.
+-- El esquema real de payment_orders, payment_attempts, payment_references y provider_events
+-- se definira en una fase posterior de implementacion.

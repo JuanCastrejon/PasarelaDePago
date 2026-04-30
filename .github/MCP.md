@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Documentar las herramientas locales que alimentan la operacion del repositorio.
+Documentar el plano operativo local del repositorio, incluso cuando no existan MCP servers dedicados versionados dentro del proyecto.
 
 ## Herramientas disponibles
 
@@ -10,19 +10,19 @@ Documentar las herramientas locales que alimentan la operacion del repositorio.
 
 - CLI: `gh`
 - uso principal:
-  - crear PRs
-  - revisar checks
-  - consultar runs
+  - crear y revisar PRs
+  - consultar checks y runs
   - crear issues
+  - configurar protecciones y settings del repo
 
 ### Supabase
 
 - CLI: `supabase`
 - uso principal:
-  - link de proyecto
-  - migraciones
-  - tipos TypeScript
-  - estado de base de datos
+  - `supabase init`
+  - `supabase link --project-ref <ref>`
+  - migraciones, seeds y generacion de tipos
+  - estado y utilidades locales
 
 ### Vercel
 
@@ -31,7 +31,7 @@ Documentar las herramientas locales que alimentan la operacion del repositorio.
   - deploy preview
   - deploy produccion
   - variables de entorno
-  - logs
+  - linkage y logs del proyecto
 
 ### Azure
 
@@ -39,17 +39,26 @@ Documentar las herramientas locales que alimentan la operacion del repositorio.
 - estado:
   - autenticado por el propietario del proyecto
 - uso previsto:
-  - gobierno futuro
-  - automatizacion de infraestructura si se requiere
+  - tokens de Entra ID
+  - automatizacion complementaria
+  - descubrimiento y soporte a Azure DevOps
 
 ### Azure DevOps
 
-- CLI: `az devops`
+- extension CLI: `az devops`
 - uso previsto:
-  - backlog y gobierno en fase posterior
+  - bootstrap de proyecto
+  - boards, wiki, repos, areas e iterations
+  - gobierno y backlog a nivel organizacional
 
-## Politica
+## Notas operativas
 
-- mientras el tracker principal siga en GitHub, `gh` es la herramienta primaria para PRs e issues
-- `az devops` no se usa todavia como fuente de verdad del backlog
+- si se versionan wrappers locales en el futuro, deben vivir bajo `.github/hooks/` o una carpeta documentada y sin secretos embebidos
+- el repo puede convivir con configuraciones personales como `.vscode/mcp.json`, pero esas rutas quedan fuera de git
 - cualquier automatizacion local sensible debe quedar documentada antes de compartirse
+
+## Politica actual
+
+- mientras GitHub siga siendo el tracker activo, `gh` es la herramienta primaria para PRs e issues
+- Azure DevOps ya puede usarse como capa de gobierno, pero no reemplaza el valor documental del repo
+- las decisiones operativas deben reflejarse en `.github/skills/operacion-cli-devops/` y en `docs/proceso/`

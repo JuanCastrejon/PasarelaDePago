@@ -1,6 +1,6 @@
-import type { PaymentMethodFamily } from "../domain/payment-method-family.js";
-import { isTerminalAttemptStatus } from "../domain/payment-status.js";
-import type { CanonicalPaymentAttemptStatus } from "../domain/payment-status.js";
+import type { PaymentMethodFamily } from "../domain/payment-method-family";
+import { isTerminalAttemptStatus } from "../domain/payment-status";
+import type { CanonicalPaymentAttemptStatus } from "../domain/payment-status";
 
 export type RetryStrategy =
   | "NONE"

@@ -1,4 +1,4 @@
-import type { PaymentOrderStatus } from "./payment-status.js";
+import type { PaymentOrderStatus } from "./payment-status";
 
 export interface PaymentOrder {
   id: string;

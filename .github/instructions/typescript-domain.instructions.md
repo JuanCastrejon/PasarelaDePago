@@ -1,5 +1,5 @@
 ---
-description: "Reglas para desarrollar el nucleo TypeScript del dominio y la orquestacion de pagos. Usar cuando: se cree o refactorice codigo en src/, modelos, mapeos, adapters o politicas de retry."
+description: "Reglas para desarrollar el nucleo TypeScript del dominio y la orquestacion de pagos. Usar cuando: se cree o refactorice codigo en packages/payment-core, modelos, mapeos, adapters, contratos o politicas de retry."
 ---
 
 # TypeScript y Dominio
@@ -10,7 +10,9 @@ description: "Reglas para desarrollar el nucleo TypeScript del dominio y la orqu
 - no usar `any`
 - mantener identificadores en ingles
 - mantener enums o uniones canonicas, no estados crudos del proveedor en el dominio
-- separar dominio, orquestacion y adapters
+- separar dominio, contratos, errores, orquestacion y adapters
+- preferir tipos puros y funciones puras en `packages/payment-core`
+- no meter IO de proveedor dentro de entidades o tipos canonicos
 
 ## Modelo minimo
 

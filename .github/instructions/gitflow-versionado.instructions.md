@@ -22,6 +22,7 @@ description: "Reglas de ramas, commits, PRs y versionado para PasarelaDePago. Us
 - revisar `git status`
 - revisar `git diff --staged`
 - confirmar que `.gitignore` cubra artefactos privados o locales
+- confirmar que no se agrego `.copilot/`, `supabase/.temp/`, PDFs con PII o carpetas locales de referencia
 
 ## Prohibiciones
 

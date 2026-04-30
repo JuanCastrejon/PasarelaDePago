@@ -1,5 +1,5 @@
-import type { CanonicalPaymentAttemptStatus } from "../domain/payment-status.js";
-import type { ProviderCode } from "../domain/provider.js";
+import type { CanonicalPaymentAttemptStatus } from "../domain/payment-status";
+import type { ProviderCode } from "../domain/provider";
 
 export interface ProviderStatusMapping {
   canonicalStatus: CanonicalPaymentAttemptStatus;

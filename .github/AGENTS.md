@@ -25,9 +25,13 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 - base global: `.github/copilot-instructions.md`
 - gobernanza: `.github/instructions/agent-personalizacion.instructions.md`
 - TypeScript y dominio: `.github/instructions/typescript-domain.instructions.md`
+- Next.js web: `.github/instructions/nextjs-web.instructions.md`
+- SQL y Supabase: `.github/instructions/sql-database.instructions.md`
 - arquitectura de pagos: `.github/instructions/pagos-arquitectura.instructions.md`
+- workflows y asincronia: `.github/instructions/vercel-workflows.instructions.md`
 - documentacion y backlog: `.github/instructions/documentacion-y-backlog.instructions.md`
 - gitflow y versionado: `.github/instructions/gitflow-versionado.instructions.md`
+- testing y calidad: `.github/instructions/testing-quality.instructions.md`
 
 ### Skills internas del repositorio
 
@@ -37,6 +41,8 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 - documentacion viva: `.github/skills/documentacion-viva/SKILL.md`
 - orquestacion multiagente: `.github/skills/orquestacion-multiagente/SKILL.md`
 - arquitectura y dominio de pagos: `.github/skills/arquitectura-dominio-pagos/SKILL.md`
+- auditoria backend del payment core: `.github/skills/backend-audit-pagos/SKILL.md`
+- UI/UX de operaciones y checkout: `.github/skills/ui-ux-operaciones-pagos/SKILL.md`
 
 ### Skills de dominio ya existentes
 
@@ -57,6 +63,12 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 - gitflow del repo: `.agents/workflows/flujo-feature-develop-main.md`
 - gobernanza de skills: `.agents/workflows/gobernanza-skills-externas.md`
 - QA y cierre: `.agents/workflows/qa-y-cierre.md`
+
+### Hooks locales de guardrails
+
+- configuracion base: `.github/hooks/base-guardrails.json`
+- validacion pre-tool-use: `.github/hooks/scripts/pre-tool-use.js`
+- mensaje de arranque de sesion: `.github/hooks/scripts/session-start.js`
 
 ## Regla operativa para el agente
 
@@ -80,6 +92,14 @@ La estructura objetivo del proyecto es:
 - skills internas para repetir criterios operativos
 - 6 agentes personalizados documentados, con orquestacion y planificacion separadas de la ejecucion
 - validacion humana final para testing, QA, code review y deploy
+
+## Estructura tecnica actual
+
+- `apps/web`: capa web y futura superficie operativa en Next.js
+- `packages/payment-core`: dominio, contratos y orquestacion reusable
+- `supabase/`: arranque local del esquema y migraciones
+- `tests/contract/`: base para pruebas de contrato y adapters
+- `docs/`: fuente historica y versionada del conocimiento
 
 ## Estado actual
 

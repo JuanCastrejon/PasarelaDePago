@@ -8,7 +8,7 @@ description: "Reglas para mantener documentacion, requisitos, backlog y ADRs sin
 
 - no sobrescribir documentos previos si la politica del repo pide version incremental
 - si un cambio modifica arquitectura o flujo, actualizar docs relevantes en la misma rama
-- usar `docs/indice-maestro1.md` como nodo de navegacion
+- usar el indice maestro mas reciente como nodo de navegacion
 - requisitos, backlog y ADRs deben mantenerse alineados
 
 ## Orden de actualizacion

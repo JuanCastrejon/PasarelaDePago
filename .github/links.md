@@ -16,9 +16,12 @@
 - GitHub Issues: [Issues del repositorio](https://github.com/JuanCastrejon/PasarelaDePago/issues)
 - Vercel: pendiente de enlazar cuando exista app desplegable
 - Supabase: pendiente de enlazar cuando se cree proyecto base
-- Azure DevOps: pendiente de crear proyecto
+- Azure DevOps Organization: `https://dev.azure.com/juancastrejondb/`
+- Azure DevOps Project: [PasarelaDePago](https://dev.azure.com/juancastrejondb/PasarelaDePago)
+- Azure DevOps Wiki: [PasarelaDePagoWiki](https://dev.azure.com/juancastrejondb/5b1dfe07-f6b3-42bb-ae3b-5539809dfd27/_wiki/wikis/4ea9a4e3-9cfb-4165-9b78-a252cebe881d)
 
 ## Ramas
 
 - `main`: rama estable y publica
 - `develop`: rama de integracion
+- `feature/estructura-operativa-multiagente`: rama actual del trabajo de bootstrap

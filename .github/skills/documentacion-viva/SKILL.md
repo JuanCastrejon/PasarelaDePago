@@ -1,18 +1,27 @@
 ---
 name: documentacion-viva
-description: "Mantiene README, docs, backlog y skills sincronizados con el estado real de PasarelaDePago. Usar cuando se complete una funcionalidad, cambie la arquitectura, se actualice el backlog o se modifique el flujo operativo."
+description: "Mantiene README, docs, backlog y skills sincronizados con el estado real de PasarelaDePago. Usar cuando se complete una funcionalidad, cambie la arquitectura, se actualice el backlog, se cree una nueva capa del monorepo o se modifique el flujo operativo."
 ---
 
 # Documentacion Viva
 
-## Regla
+## Principio
 
-Si cambia el proyecto, cambia la documentacion.
+Si cambia el proyecto, cambia la documentacion y la memoria operativa.
 
 ## Archivos a revisar
 
 - `README.md`
-- `docs/indice-maestro1.md`
+- el indice maestro vigente
 - documentos de dominio, requisitos, backlog o ADRs afectados
 - `.github/AGENTS.md`
 - skills internas si cambio el flujo
+
+## Cuadricula de sincronizacion
+
+| Tipo de cambio | Documentos a revisar |
+|---|---|
+| nueva capa del monorepo | README, indice maestro, skill `contexto-proyecto` |
+| cambio de stack o dependencia relevante | `copilot-instructions.md`, docs de proceso, allowlist de skills |
+| nueva regla de arquitectura | ADR, modelo canonico, skill de arquitectura |
+| nueva regla operativa | `.github/AGENTS.md`, `VERSIONADO.md`, workflows |

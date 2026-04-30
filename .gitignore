@@ -26,6 +26,8 @@ pnpm-debug.log*
 
 # Local agent tooling
 .copilot/
+.agents/skills/
+skills-lock.json
 copia_.github_otro_proyecto_de_referencia/
 .vscode/settings.json
 .vscode/mcp.json
@@ -34,6 +36,10 @@ copia_.github_otro_proyecto_de_referencia/
 coverage/
 .turbo/
 .cache/
+*.tsbuildinfo
+playwright-report/
+test-results/
+supabase/.temp/
 
 # OS / editors
 .DS_Store

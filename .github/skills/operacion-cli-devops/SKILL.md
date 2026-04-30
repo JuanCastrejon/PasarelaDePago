@@ -1,6 +1,6 @@
 ---
 name: operacion-cli-devops
-description: "Operacion profesional con GitHub CLI, Supabase CLI, Vercel CLI y Azure CLI para PasarelaDePago. Usar cuando se prepare un PR, se validen checks, se enlace infraestructura o se gobiernen skills externas."
+description: "Operacion profesional con GitHub CLI, Supabase CLI, Vercel CLI y Azure CLI para PasarelaDePago. Usar cuando se prepare un PR, se validen checks, se enlace infraestructura, se gobiernen skills externas o se bootstrapée Azure DevOps."
 ---
 
 # Operacion CLI y DevOps
@@ -23,3 +23,9 @@ No abrir PR listo para merge si las validaciones o checks obligatorios estan fal
 3. abrir PR draft
 4. corregir CI
 5. pasar PR a ready
+
+## Referencias de apoyo
+
+- `references/checklist-cli.md`
+- `references/autoskills-allowlist.md`
+- `references/azure-devops-bootstrap.md`

@@ -15,12 +15,16 @@ Solo se versiona lo que aporta ejecucion, decisiones tecnicas, trazabilidad o va
 - `.github/`
 - `.agents/workflows/`
 - `docs/`
+- `supabase/`
 
 ### Codigo y configuracion
 
-- `src/`
+- `apps/`
+- `packages/`
 - `package.json`
 - `package-lock.json`
+- `turbo.json`
+- `tsconfig.base.json`
 - `tsconfig.json`
 - `.vscode/extensions.json`
 
@@ -38,13 +42,19 @@ Solo se versiona lo que aporta ejecucion, decisiones tecnicas, trazabilidad o va
 - `.vscode/settings.json`
 - `.vscode/mcp.json`
 - `.copilot/`
+- `.agents/skills/`
+- `skills-lock.json`
 
 ### Artefactos locales
 
 - `node_modules/`
+- `.next/`
 - `dist/`
 - `.cache/`
 - `coverage/`
+- `playwright-report/`
+- `test-results/`
+- `supabase/.temp/`
 
 ### Evidencia privada o de referencia
 
