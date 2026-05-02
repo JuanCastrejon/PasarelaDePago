@@ -17,7 +17,12 @@
     "test": "turbo run test --continue",
     "test:e2e": "turbo run test:e2e --continue",
     "test:unit": "turbo run test:unit --continue",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "validate:control-plane": "node scripts/validate-control-plane.mjs",
+    "validate:drift": "node scripts/validate-drift.mjs",
+    "validate:slice-traceability": "node scripts/validate-slice-traceability.mjs",
+    "validate:surface-traceability": "node scripts/validate-surface-traceability.mjs",
+    "validate:semantic-guardrails": "node scripts/validate-semantic-guardrails.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.9.0",

@@ -15,3 +15,10 @@ Ayudar a skills externas y agentes a detectar rapidamente:
 - donde vive el dominio reusable
 - donde se modela persistencia
 - donde deberian caer pruebas y adapters
+
+## Relacion con trazabilidad
+
+La relacion entre estas superficies y el backlog/arquitectura queda fijada en:
+
+- `docs/agents/matriz-de-trazabilidad-por-superficie1.md`
+- `.github/agents/surface-traceability.json`

@@ -22,6 +22,8 @@ Separar siempre:
 - quien ejecuta
 - quien valida
 - que skill gobierna cada fase
+- que agente posee la fase o superficie
+- que estado compartido debe actualizarse
 
 ## Contrato minimo por handoff
 
@@ -30,7 +32,15 @@ Separar siempre:
 - skill o instruccion aplicable
 - salida esperada
 - criterio de cierre
+- riesgos abiertos
+- gate humano requerido
 
 ## Referencia
 
-Leer la version mas reciente de `docs/proceso/sistema-de-trabajo-multiagente*.md`.
+Antes de delegar:
+
+1. leer `.github/agents/ownership-matrix.md`
+2. leer `.github/agent-state/phase-status.yaml`
+3. revisar `.github/agent-state/current-slice.md`
+4. usar `.github/agent-state/handoffs/TEMPLATE.md` si el trabajo pasa a otro agente
+5. leer la version mas reciente de `docs/proceso/sistema-de-trabajo-multiagente*.md`

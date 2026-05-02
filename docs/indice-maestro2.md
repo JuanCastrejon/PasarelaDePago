@@ -1,6 +1,6 @@
 # Indice Maestro de Documentacion v2
 
-Fecha de actualizacion: 2026-04-30
+Fecha de actualizacion: 2026-05-02
 
 ## 1. Proposito
 
@@ -33,10 +33,15 @@ Servir como punto de entrada unico para navegar el proyecto despues del bootstra
 - [User stories priorizadas](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/user-stories-priorizadas1.md)
 - [Tasks tecnicas iniciales](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/tasks-tecnicas-iniciales1.md)
 - [Roadmap por fases](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/roadmap-por-fases1.md)
+- [Slice packs](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/slices/README.md)
+- [Slice P0 - Payment Order Bootstrap](/C:/Users/juand/source/repos/PasarelaDePago/docs/backlog/slices/slice-payment-order-bootstrap1.md)
 
 ### Paso 5 - Entender el sistema de trabajo
 
 - [Sistema de trabajo multiagente v2](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sistema-de-trabajo-multiagente2.md)
+- [Mapa de agentes y handoffs v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/mapa-de-agentes-y-handoffs1.md)
+- [Matriz de trazabilidad por superficie v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/matriz-de-trazabilidad-por-superficie1.md)
+- [Guardrails semanticos del dominio v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/guardrails-semanticos-del-dominio1.md)
 - [Gobernanza de skills y fuentes v2](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/gobernanza-de-skills-y-fuentes2.md)
 - [Auditoria de personalizacion y brechas](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/auditoria-de-personalizacion-y-brechas1.md)
 - [Azure DevOps bootstrap operativo](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/azure-devops-bootstrap-operativo1.md)
@@ -57,6 +62,9 @@ Servir como punto de entrada unico para navegar el proyecto despues del bootstra
 ### Proceso y gobierno
 
 - [Sistema de trabajo multiagente v2](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/sistema-de-trabajo-multiagente2.md)
+- [Mapa de agentes y handoffs v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/mapa-de-agentes-y-handoffs1.md)
+- [Matriz de trazabilidad por superficie v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/matriz-de-trazabilidad-por-superficie1.md)
+- [Guardrails semanticos del dominio v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/guardrails-semanticos-del-dominio1.md)
 - [Gobernanza de skills y fuentes v2](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/gobernanza-de-skills-y-fuentes2.md)
 - [Auditoria de personalizacion y brechas](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/auditoria-de-personalizacion-y-brechas1.md)
 - [Azure DevOps bootstrap operativo](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/azure-devops-bootstrap-operativo1.md)
@@ -65,3 +73,6 @@ Servir como punto de entrada unico para navegar el proyecto despues del bootstra
 
 - [Catalogo de skills del proyecto v2](/C:/Users/juand/source/repos/PasarelaDePago/docs/skills/catalogo-de-skills-del-proyecto2.md)
 - [Stack map para agentes](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/stack-map.md)
+- [Mapa de agentes y handoffs v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/mapa-de-agentes-y-handoffs1.md)
+- [Matriz de trazabilidad por superficie v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/matriz-de-trazabilidad-por-superficie1.md)
+- [Guardrails semanticos del dominio v1](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/guardrails-semanticos-del-dominio1.md)

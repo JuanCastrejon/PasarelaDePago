@@ -1,0 +1,40 @@
+version: 1
+current_track: "fundacional"
+current_slice: "control-plane-agentes-v1"
+current_phase: "ejecucion"
+
+source_of_truth:
+  governance:
+    - ".github/copilot-instructions.md"
+    - ".github/AGENTS.md"
+  context:
+    - "CONTEXT.md"
+    - "docs/indice-maestro2.md"
+  operational_state:
+    - ".github/agent-state/current-slice.md"
+    - ".github/agent-state/open-decisions.md"
+    - ".github/agent-state/open-risks.md"
+
+phase_owners:
+  definicion: "analista-openspec"
+  diseno_sistema: "arquitecto-dominio-pagos"
+  implementacion_web: "web-operaciones"
+  implementacion_payment_core: "payment-core"
+  implementacion_integraciones_datos: "integraciones-datos"
+  aseguramiento: "qa-security-review"
+  revision_humana: "lead-testing-qa-review"
+  deploy_humano: "lead-deploy"
+
+control_plane:
+  planificacion: "planificador-opus"
+  orquestacion: "orquestador-opus"
+
+active_gates:
+  before_merge:
+    - "git status esperado"
+    - "documentacion viva alineada"
+    - "riesgos abiertos registrados"
+    - "decisiones abiertas actualizadas"
+
+notes:
+  - "Esta v1 introduce agentes versionados y estado compartido antes de profundizar implementacion de producto."

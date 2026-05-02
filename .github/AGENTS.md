@@ -44,6 +44,36 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 - auditoria backend del payment core: `.github/skills/backend-audit-pagos/SKILL.md`
 - UI/UX de operaciones y checkout: `.github/skills/ui-ux-operaciones-pagos/SKILL.md`
 
+### Agentes versionados
+
+#### Control plane
+
+- `Planificador Opus`: `.github/agents/planificador-opus.agent.md`
+- `Orquestador Opus`: `.github/agents/orquestador-opus.agent.md`
+
+#### Specialist plane
+
+- `Analista OpenSpec`: `.github/agents/analista-openspec.agent.md`
+- `Arquitecto Dominio Pagos`: `.github/agents/arquitecto-dominio-pagos.agent.md`
+- `Payment Core`: `.github/agents/payment-core.agent.md`
+- `Web Operaciones`: `.github/agents/web-operaciones.agent.md`
+- `Integraciones y Datos`: `.github/agents/integraciones-datos.agent.md`
+- `QA Security Review`: `.github/agents/qa-security-review.agent.md`
+
+#### Matriz de ownership
+
+- matriz principal: `.github/agents/ownership-matrix.md`
+- resumen de uso: `.github/agents/README.md`
+
+### Estado compartido y handoffs
+
+- estado de fase: `.github/agent-state/phase-status.yaml`
+- slice actual: `.github/agent-state/current-slice.md`
+- decisiones abiertas: `.github/agent-state/open-decisions.md`
+- riesgos abiertos: `.github/agent-state/open-risks.md`
+- plantilla de handoff: `.github/agent-state/handoffs/TEMPLATE.md`
+- plantilla de phase gate: `.github/agent-state/templates/phase-gate.md`
+
 ### Skills de dominio ya existentes
 
 - catalogo local: `project-skills/`
@@ -70,17 +100,28 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 - validacion pre-tool-use: `.github/hooks/scripts/pre-tool-use.js`
 - mensaje de arranque de sesion: `.github/hooks/scripts/session-start.js`
 
+### Validaciones operativas del control plane
+
+- validacion estructural: `npm run validate:control-plane`
+- validacion de drift documental y operativo: `npm run validate:drift`
+- validacion de trazabilidad de slice: `npm run validate:slice-traceability`
+- validacion de trazabilidad por superficie: `npm run validate:surface-traceability`
+- validacion de guardrails semanticos: `npm run validate:semantic-guardrails`
+
 ## Regla operativa para el agente
 
 1. Cargar primero la skill `contexto-proyecto`.
-2. Cargar luego la skill especifica de la tarea.
-3. Mantener idioma espanol en documentacion, PRs, issues y commits.
-4. Mantener identificadores de codigo en ingles.
-5. Toda rama de trabajo nace desde `develop`.
-6. No hacer push directo a `develop` ni `main`.
-7. Todo cambio va por PR.
-8. Los commits deben ser atomicos y en espanol.
-9. Si hay artefactos privados, evidencia sensible o material solo de referencia, deben quedar fuera del repo.
+2. Si la tarea cruza fases o agentes, leer `.github/agents/ownership-matrix.md` y `.github/agent-state/phase-status.yaml`.
+3. Cargar luego la skill especifica de la tarea.
+4. Usar la plantilla de `handoff` cuando una salida deba consumirse por otro agente o rol humano.
+5. Mantener idioma espanol en documentacion, PRs, issues y commits.
+6. Mantener identificadores de codigo en ingles.
+7. Toda rama de trabajo nace desde `develop`.
+8. No hacer push directo a `develop` ni `main`.
+9. Todo cambio va por PR.
+10. Los commits deben ser atomicos y en espanol.
+11. Si hay artefactos privados, evidencia sensible o material solo de referencia, deben quedar fuera del repo.
+12. Si el cambio toca codigo de producto, skills o control plane, debe pasar las validaciones de `control-plane`, `drift`, `slice-traceability`, `surface-traceability` y `semantic-guardrails`.
 
 ## Modelo de trabajo
 
@@ -90,7 +131,8 @@ La estructura objetivo del proyecto es:
 - `OpenSpec` como capa compartible de requisitos y backlog
 - `Engram` como memoria persistente del proyecto en documentos y skills
 - skills internas para repetir criterios operativos
-- 6 agentes personalizados documentados, con orquestacion y planificacion separadas de la ejecucion
+- 2 agentes de control plane y 6 agentes especializados documentados en `.github/agents/`
+- estado operativo compartido en `.github/agent-state/`
 - validacion humana final para testing, QA, code review y deploy
 
 ## Estructura tecnica actual
@@ -106,4 +148,5 @@ La estructura objetivo del proyecto es:
 - repositorio remoto creado y publicado
 - `main` establecida como rama publica
 - `develop` usada como rama de integracion
+- control plane multiagente `v1` materializado con manifiestos y estado compartido
 - este documento define el flujo que se usara de ahora en adelante
