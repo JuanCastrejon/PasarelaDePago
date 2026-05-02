@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "async-truth-is-final",
+      "title": "La verdad final es asincrona",
+      "references": [
+        "docs/adr/adr-0001-verdad-asincrona-como-fuente-final1.md",
+        ".github/copilot-instructions.md",
+        ".github/instructions/pagos-arquitectura.instructions.md",
+        "packages/payment-core/src/contracts/payment-provider-adapter.ts",
+        "apps/web/src/app/api/webhooks/[provider]/route.ts"
+      ]
+    },
+    {
+      "id": "order-and-attempt-are-separate",
+      "title": "payment_order y payment_attempt son entidades separadas",
+      "references": [
+        "docs/adr/adr-0002-separacion-entre-payment-order-y-payment-attempt1.md",
+        "packages/payment-core/src/domain/payment-order.ts",
+        "packages/payment-core/src/domain/payment-attempt.ts"
+      ]
+    },
+    {
+      "id": "no-card-secrets-stored",
+      "title": "No almacenar PAN ni CVV en codigo o persistencia",
+      "references": [
+        "CONTEXT.md",
+        "docs/requisitos/requisitos-no-funcionales-consolidados1.md",
+        "apps/",
+        "packages/",
+        "supabase/"
+      ]
+    },
+    {
+      "id": "no-silent-retry-after-handoff",
+      "title": "No silent retry despues de handoff o consentimiento fuerte",
+      "references": [
+        ".github/instructions/pagos-arquitectura.instructions.md",
+        "packages/payment-core/src/orchestration/retry-policy.ts",
+        "packages/payment-core/src/providers/capability-matrix.ts"
+      ]
+    },
+    {
+      "id": "adapters-and-routing-are-decoupled",
+      "title": "Adapters y routing permanecen desacoplados",
+      "references": [
+        "docs/adr/adr-0003-adapters-de-proveedor-y-routing-desacoplado1.md",
+        "packages/payment-core/src/contracts/payment-provider-adapter.ts",
+        "packages/payment-core/src/providers/capability-matrix.ts",
+        "packages/payment-core/src/orchestration/retry-policy.ts",
+        "packages/payment-core/src/orchestration/provider-status-map.ts"
+      ]
+    }
+  ]
+}

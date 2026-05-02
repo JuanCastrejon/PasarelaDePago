@@ -26,6 +26,8 @@ Definir como se organiza el trabajo entre planeacion, orquestacion, ejecucion y 
 - decide que agente actua
 - define contexto minimo
 - define skills necesarias
+- usa `.github/agents/ownership-matrix.md`
+- usa `.github/agent-state/handoffs/TEMPLATE.md`
 
 ## Fase 4 — Ejecucion
 
@@ -47,3 +49,9 @@ Definir como se organiza el trabajo entre planeacion, orquestacion, ejecucion y 
 ## Regla
 
 Ninguna fase debe saltarse los artefactos de salida de la fase anterior.
+
+## Estado compartido
+
+- `phase-status.yaml` resume owners y fase activa
+- `current-slice.md` fija el objetivo actual
+- `open-decisions.md` y `open-risks.md` evitan perder contexto operativo

@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -28,6 +30,21 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Validate Control Plane
+        run: npm run validate:control-plane
+
+      - name: Validate Drift
+        run: npm run validate:drift
+
+      - name: Validate Slice Traceability
+        run: npm run validate:slice-traceability
+
+      - name: Validate Surface Traceability
+        run: npm run validate:surface-traceability
+
+      - name: Validate Semantic Guardrails
+        run: npm run validate:semantic-guardrails
 
       - name: Typecheck
         run: npm run typecheck

@@ -3,6 +3,11 @@
 ## Gates minimos
 
 - `git status` esperado
+- `npm run validate:control-plane`
+- `npm run validate:drift`
+- `npm run validate:slice-traceability`
+- `npm run validate:surface-traceability`
+- `npm run validate:semantic-guardrails`
 - `npm run typecheck`
 - `npm run build`
 - documentacion alineada
