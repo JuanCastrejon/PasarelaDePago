@@ -4,12 +4,30 @@
   "private": true,
   "description": "Base fundacional de una plataforma de payment orchestration para Colombia.",
   "type": "module",
+  "packageManager": "npm@11.9.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "build": "turbo run build",
+    "dev": "npm run dev --workspace @pasarela/web",
+    "dev:web": "npm run dev --workspace @pasarela/web",
+    "lint": "turbo run lint",
+    "test": "turbo run test --continue",
+    "test:e2e": "turbo run test:e2e --continue",
+    "test:unit": "turbo run test:unit --continue",
+    "typecheck": "turbo run typecheck",
+    "validate:control-plane": "node scripts/validate-control-plane.mjs",
+    "validate:drift": "node scripts/validate-drift.mjs",
+    "validate:slice-traceability": "node scripts/validate-slice-traceability.mjs",
+    "validate:surface-traceability": "node scripts/validate-surface-traceability.mjs",
+    "validate:semantic-guardrails": "node scripts/validate-semantic-guardrails.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.9.0",
+    "supabase": "^2.90.0",
+    "turbo": "^2.5.8",
     "typescript": "^5.9.3"
   }
 }

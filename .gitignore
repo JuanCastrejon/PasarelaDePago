@@ -16,6 +16,7 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+.env.local
 
 # Vercel
 .vercel/
@@ -23,16 +24,29 @@ pnpm-debug.log*
 # Supabase
 .supabase/
 
+# Local agent tooling
+.copilot/
+.agents/skills/
+skills-lock.json
+copia_.github_otro_proyecto_de_referencia/
+.vscode/settings.json
+.vscode/mcp.json
+
 # Coverage / caches
 coverage/
 .turbo/
 .cache/
+*.tsbuildinfo
+playwright-report/
+test-results/
+supabase/.temp/
 
 # OS / editors
 .DS_Store
 Thumbs.db
 .idea/
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 
 # Local evidence with personal data
 docs/Gmail - *.pdf
