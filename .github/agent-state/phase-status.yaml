@@ -1,6 +1,6 @@
 version: 1
 current_track: "fundacional"
-current_slice: "sdlc-template-bootstrap-v1"
+current_slice: "payment-order-bootstrap"
 current_phase: "planificacion"
 
 source_of_truth:
