@@ -22,7 +22,7 @@ Repo: ejecucion -> validacion
 
 - cambios en `packages/payment-core`
 - cambios en `apps/web/src/app/api/payment-orders/route.ts`
-- `slice-payment-order-bootstrap1.md`
+- `slice-payment-order-bootstrap.md`
 - `ADR-0002`
 - validaciones del repo
 
@@ -52,3 +52,4 @@ Repo: ejecucion -> validacion
 - `Lead`
 - `Testing`
 - `Code Reviewer`
+

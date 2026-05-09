@@ -1,206 +1,140 @@
-# Plan Maestro de Implementacion
+---
+status: active
+updated: 2026-05-09
+supersedes:
+  - docs/plan-implementacion-pasarela-colombia1.md
+---
+
+# Plan Maestro de Implementacion v1
 
 Fecha de actualizacion: 2026-04-29
 
-## 1. Naturaleza real del proyecto
+## 1. Proposito de este documento
 
-`PasarelaDePago` no se tratara como un MVP rapido. Se tratara como una **plataforma personal de payment orchestration para Colombia**, pensada para:
+Este archivo no reemplaza el plan maestro base. Funciona como `corte incremental` de investigacion y decisiones, para respetar la regla de no sobrescribir los documentos ya existentes.
 
-- demostrar dominio FullStack real
-- servir como base reusable para futuros clientes
-- soportar multiples proveedores y multiples flujos
-- crecer con documentacion, arquitectura y skills propias
+Documento base relacionado:
 
-La tesis central del proyecto es:
+- [plan-implementacion-pasarela-colombia.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/plan-implementacion-pasarela-colombia.md)
 
-- no reinventar adquirencia o procesamiento regulado de bajo nivel
-- si construir una capa propia de alto valor sobre proveedores ya existentes
+## 2. Cambios relevantes de esta iteracion
 
-## 2. Que vamos a construir
+### 2.1 Bre-B pasa a prioridad alta
 
-Una plataforma propia de:
+La evidencia oficial del Banco de la Republica ya permite tratar `Bre-B` como infraestructura operativa real:
 
-- `checkout orchestration`
-- `multi-provider routing`
-- `fallback y smart retry`
-- `webhook normalization`
-- `payout orchestration`
-- `reconciliation`
-- `merchant operations`
-- `observability`
-- `documentacion y skills del proyecto`
+- el 18 de septiembre de 2025 el Banco de la Republica anunció que el `23 de septiembre` entraba en funcionamiento el mecanismo que permite la interoperabilidad plena del sistema
+- el 6 de abril de 2026 el propio BanRep ya habla de `seis meses de operación`
+- las FAQ oficiales indican que para pagar con Bre-B basta conocer la `llave` del receptor o `escanear el código QR`
 
-## 3. Que NO vamos a construir de entrada
+Implicacion:
 
-- adquirencia propia
-- almacenamiento de PAN o CVV
-- infraestructura regulada de bajo nivel del proveedor
-- un ledger custodial completo desde la primera version
+- Bre-B no puede quedar relegado a “fase futura difusa”
+- el modelo de medios de pago del proyecto debe incluir `llaves`, `QR` y `pago inmediato interoperable`
 
-## 4. Estrategia de proveedores
+### 2.2 Wompi y PayU se fortalecen por razones distintas
 
-### Pagos entrantes
+`Wompi`:
 
-- `Wompi` como primer proveedor fuerte para pagos locales y salida rapida a produccion futura.
-- `PayU` como proveedor clave para `Bre-B`, `PSE`, `Nequi`, `Boton Bancolombia` y redundancia.
-- `ePayco` como proveedor complementario para cobertura amplia, split y recurrentes.
-- `Mercado Pago` como referencia tecnica y opcion futura de expansion regional.
+- sobresale en pagos locales
+- tiene payouts con sandbox
+- soporta múltiples cuentas origen
+- soporta idempotencia
+- maneja aprobación y rechazo en pagos a terceros
 
-### Pagos salientes
+`PayU`:
 
-- `Wompi Pagos a terceros` como primera linea para payouts.
-- `PayU Payouts` como segunda linea fuerte para dispersiones.
+- documenta `QR Bre-B` explícitamente en la API de pagos de Colombia
+- tiene una oferta de payouts más madura para escenarios de terceros
+- soporta webhook, estados detallados y validaciones de riesgo en payouts
 
-## 5. Decisiones tecnicas maestras
+Implicacion:
 
-### 5.1 Modelo de dominio
+- la primera arquitectura multiproveedor debe modelar a `Wompi` y `PayU` como binomio principal
 
-Separaremos como entidades distintas:
+### 2.3 Azure DevOps se usará como sistema de gobierno, no como sustituto de investigación
 
-- `payment_order`
-- `payment_attempt`
-- `provider_transaction`
-- `payout_batch`
-- `payout_item`
-- `webhook_event`
-- `reconciliation_item`
+La investigación debe terminar primero en artefactos claros y luego migrarse a:
 
-### 5.2 Regla de verdad del estado
+- Azure Boards
+- Azure Wiki
+- Azure Repos / PR traceability
+- dashboards y queries
 
-El estado final de una operacion debe provenir de:
+Implicacion:
 
-- webhook validado
-- o consulta servidor a servidor
+- por ahora seguimos creando documentación fuerte en el repo
+- después sincronizamos esa estructura a Azure DevOps con una taxonomía limpia
 
-Nunca de una simple redireccion del navegador.
+## 3. Nuevos frentes de trabajo
 
-### 5.3 Regla de resiliencia
+### Frente A - Compliance y operación para terceros
 
-El sistema debe distinguir entre:
+Objetivo:
 
-- `fallback`
-- `smart retry`
-- `business decline`
-- `provider outage`
+- entender qué cambia cuando la plataforma deja de ser “proyecto técnico” y empieza a prestar servicio a terceros
 
-No todo error permite retry silencioso.
+Archivo relacionado:
 
-### 5.4 Regla de seguridad
+- [compliance-y-riesgo-para-terceros.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/investigacion/compliance-y-riesgo-para-terceros.md)
 
-- credenciales solo del lado servidor
-- idempotencia en operaciones criticas
-- auditoria de eventos
-- minimizacion de PII
-- verificacion criptografica de webhooks cuando el proveedor lo permita
+### Frente B - Resiliencia y operación multi-proveedor
 
-## 6. Stack objetivo
+Objetivo:
 
-- `Next.js` sobre `Vercel` para panel, backoffice y endpoints de integracion
-- `Supabase` para Postgres, autenticacion, storage y politicas
-- `TypeScript` end-to-end
-- jobs asincronos para webhooks, polling, conciliacion y payouts
+- modelar failover, retry, webhooks, estados y payouts con disciplina operativa
 
-## 7. Fases del proyecto
+Archivo relacionado:
 
-### Fase 0 - Fundamentos de producto
+- [resiliencia-failover-y-operacion.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/investigacion/resiliencia-failover-y-operacion.md)
 
-- investigacion de proveedores
-- investigacion regulatoria
-- requerimientos
-- casos de uso
-- historias de usuario
-- glosario del dominio
-- skills del proyecto
+### Frente C - Gobierno futuro con Azure DevOps
 
-### Fase 1 - Foundation tecnica
+Objetivo:
 
-- inicializar repo
-- scaffolding del stack
-- estructura de carpetas
-- esquema base de datos
-- manejo de secretos
-- observabilidad base
+- preparar la forma profesional de capturar requisitos, backlog, documentación y trazabilidad
 
-### Fase 2 - Primer flujo de cobro
+Archivo relacionado:
 
-- ordenes de pago
-- intentos de pago
-- integracion con `Wompi`
-- webhooks validados
-- estado final consolidado
-- dashboard operativo inicial
+- [azure-devops-y-gobierno-del-proyecto.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/proceso/azure-devops-y-gobierno-del-proyecto.md)
 
-### Fase 3 - Multiproveedor
+## 4. Decisiones provisionales actualizadas
 
-- integracion con `PayU`
-- matriz de capacidades
-- ruteo por metodo
-- fallback controlado
-- alertas de degradacion
-- Bre-B como flujo real
+### Pagos
 
-### Fase 4 - Operacion y conciliacion
+- `Wompi` primero para tarjetas, PSE, Nequi y flujos locales
+- `PayU` segundo para Bre-B y respaldo estratégico
+- `ePayco` tercero para cobertura, split y recurrentes
 
-- reportes
-- conciliacion
-- auditoria
-- exploracion de errores
-- metricas por proveedor
+### Payouts
 
-### Fase 5 - Payouts
+- `Wompi` primero para validación funcional rápida
+- `PayU` segundo para escenarios más empresariales y de riesgo
 
-- beneficiarios
-- cuentas origen
-- lotes
-- aprobacion dual
-- payouts via `Wompi`
-- payouts via `PayU`
+### Trazabilidad
 
-### Fase 6 - Ampliacion de producto
+- toda orden debe terminar ligada a work items y PRs cuando pasemos a Azure DevOps
 
-- `ePayco`
-- recurrentes
-- split payments
-- UX self-service para comercios
-- optimizacion de tasas de exito
+## 5. Siguiente backlog de investigación
 
-## 8. Orden recomendado de construccion
+1. Profundizar el flujo exacto de `Bre-B` por proveedor, incluyendo UX, estados, limitaciones y trazabilidad.
+2. Investigar KYC/KYB, activación comercial y análisis de riesgo para operar pagos y payouts para terceros.
+3. Diseñar la taxonomía de errores que habilita `retry`, `fallback` o `manual review`.
+4. Definir el mapa de epics/features/stories que luego se migrará a Azure Boards.
 
-1. documentacion base
-2. skillset del proyecto
-3. contexto del dominio
-4. foundation tecnica
-5. pagos one-time con Wompi
-6. webhooks y reconciliacion basica
-7. PayU y Bre-B
-8. ruteo y fallback
-9. payouts
-10. ePayco y modulos complementarios
+## 6. Fuentes clave de esta iteracion
 
-## 9. Riesgos principales
+- Banco de la República - Bre-B:
+  [banrep.gov.co/es/bre-b](https://www.banrep.gov.co/es/bre-b)
+- Wompi Pagos a Terceros:
+  [docs.wompi.co/docs/colombia/introduccion-pagos-a-terceros](https://docs.wompi.co/docs/colombia/introduccion-pagos-a-terceros/)
+- PayU API de Pagos - Colombia:
+  [developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html)
+- PayU Payouts - Colombia:
+  [developers.payulatam.com/latam/es/docs/services/payouts.html](https://developers.payulatam.com/latam/es/docs/services/payouts.html)
+- Azure Boards y Azure Repos:
+  [learn.microsoft.com/en-us/azure/devops](https://learn.microsoft.com/en-us/azure/devops/)
 
-- asumir soporte de un metodo sin documentacion oficial vigente
-- acoplar el dominio al proveedor
-- confiar en redirects para estados finales
-- implementar fallback sin clasificacion de errores
-- no modelar payouts como dominio propio
-- posponer conciliacion y observabilidad
 
-## 10. Mapa documental del repo
 
-Este plan maestro se apoya en:
 
-- [CONTEXT.md](/C:/Users/juand/source/repos/PasarelaDePago/CONTEXT.md)
-- [proveedores-colombia-y-open-source.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/investigacion/proveedores-colombia-y-open-source.md)
-- [requisitos-y-casos-de-uso.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/requisitos/requisitos-y-casos-de-uso.md)
-- [historias-de-usuario.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/requisitos/historias-de-usuario.md)
-- [orquestacion-failover-y-bre-b.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/arquitectura/orquestacion-failover-y-bre-b.md)
-- [catalogo-de-skills-del-proyecto.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/skills/catalogo-de-skills-del-proyecto.md)
-
-## 11. Siguiente decision practica
-
-El siguiente paso mas valioso sigue siendo:
-
-1. continuar profundizando investigacion donde haya incertidumbre
-2. consolidar PRD y backlog inicial
-3. recien despues scaffold del proyecto tecnico

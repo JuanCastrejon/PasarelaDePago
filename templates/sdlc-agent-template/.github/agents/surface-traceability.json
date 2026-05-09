@@ -1,0 +1,543 @@
+{
+  "version": 1,
+  "roots": [
+    "apps/web/src",
+    "packages/payment-core/src",
+    "supabase/migrations",
+    "supabase/seed.sql",
+    "tests/contract"
+  ],
+  "surfaces": [
+    {
+      "id": "web-overview-shell",
+      "owner": "web-operaciones",
+      "repoSurface": "apps/web",
+      "pathPrefixes": [
+        "apps/web/src/app/layout.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/globals.css"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-015"
+        ],
+        "userStories": [
+          "US-020"
+        ],
+        "epicsOrFeatures": [
+          "F-1204"
+        ],
+        "tasksTecnicas": [
+          "TT-001"
+        ],
+        "adrs": [
+          "ADR-0004"
+        ]
+      },
+      "notes": "Superficie visible del proyecto para demo operativa y comunicacion de arquitectura."
+    },
+    {
+      "id": "web-operations-ui",
+      "owner": "web-operaciones",
+      "repoSurface": "apps/web",
+      "pathPrefixes": [
+        "apps/web/src/app/operations/"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-056",
+          "RFV2-057",
+          "RFV2-060"
+        ],
+        "userStories": [
+          "US-006",
+          "US-011"
+        ],
+        "epicsOrFeatures": [
+          "F-1001",
+          "F-1002",
+          "F-1005"
+        ],
+        "tasksTecnicas": [
+          "TT-031",
+          "TT-032",
+          "TT-035"
+        ],
+        "adrs": [
+          "ADR-0001"
+        ]
+      },
+      "notes": "Placeholder y futura superficie del backoffice operativo."
+    },
+    {
+      "id": "web-api-payment-orders",
+      "owner": "web-operaciones",
+      "repoSurface": "apps/web",
+      "pathPrefixes": [
+        "apps/web/src/app/api/payment-orders/"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-011"
+        ],
+        "userStories": [
+          "US-001"
+        ],
+        "epicsOrFeatures": [
+          "F-301"
+        ],
+        "tasksTecnicas": [
+          "TT-011"
+        ],
+        "adrs": [
+          "ADR-0002",
+          "ADR-0004"
+        ]
+      },
+      "notes": "Entrada web para creacion de payment orders."
+    },
+    {
+      "id": "web-api-webhooks",
+      "owner": "web-operaciones",
+      "repoSurface": "apps/web",
+      "pathPrefixes": [
+        "apps/web/src/app/api/webhooks/"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-026",
+          "RFV2-027",
+          "RFV2-028",
+          "RFV2-029",
+          "RFV2-030"
+        ],
+        "userStories": [
+          "US-005",
+          "US-007"
+        ],
+        "epicsOrFeatures": [
+          "F-801",
+          "F-802",
+          "F-803",
+          "F-804"
+        ],
+        "tasksTecnicas": [
+          "TT-016",
+          "TT-017",
+          "TT-018"
+        ],
+        "adrs": [
+          "ADR-0001",
+          "ADR-0003"
+        ]
+      },
+      "notes": "Inbox web de webhooks por proveedor con validacion y deduplicacion futuras."
+    },
+    {
+      "id": "web-api-health",
+      "owner": "web-operaciones",
+      "repoSurface": "apps/web",
+      "pathPrefixes": [
+        "apps/web/src/app/api/health/"
+      ],
+      "references": {
+        "requirements": [],
+        "userStories": [
+          "US-020"
+        ],
+        "epicsOrFeatures": [
+          "F-1204"
+        ],
+        "tasksTecnicas": [
+          "TT-035"
+        ],
+        "adrs": [
+          "ADR-0004"
+        ]
+      },
+      "notes": "Health endpoint del shell web y de la demo operativa."
+    },
+    {
+      "id": "core-domain-payment-order",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/domain/payment-order.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-011"
+        ],
+        "userStories": [
+          "US-001"
+        ],
+        "epicsOrFeatures": [
+          "F-301"
+        ],
+        "tasksTecnicas": [
+          "TT-003"
+        ],
+        "adrs": [
+          "ADR-0002"
+        ]
+      },
+      "notes": "Entidad canonica de orden de pago."
+    },
+    {
+      "id": "core-domain-payment-attempt",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/domain/payment-attempt.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-016",
+          "RFV2-018",
+          "RFV2-036",
+          "RFV2-040"
+        ],
+        "userStories": [
+          "US-002",
+          "US-008"
+        ],
+        "epicsOrFeatures": [
+          "F-302",
+          "F-603",
+          "F-604"
+        ],
+        "tasksTecnicas": [
+          "TT-004",
+          "TT-019"
+        ],
+        "adrs": [
+          "ADR-0002",
+          "ADR-0003"
+        ]
+      },
+      "notes": "Entidad canonica de intentos y origenes de reintento/fallback."
+    },
+    {
+      "id": "core-domain-payment-status",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/domain/payment-status.ts",
+        "packages/payment-core/src/orchestration/provider-status-map.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-030"
+        ],
+        "userStories": [
+          "US-005",
+          "US-007"
+        ],
+        "epicsOrFeatures": [
+          "F-102",
+          "F-801",
+          "F-803"
+        ],
+        "tasksTecnicas": [
+          "TT-002",
+          "TT-009"
+        ],
+        "adrs": [
+          "ADR-0001",
+          "ADR-0003"
+        ]
+      },
+      "notes": "Estados canonicos y mapping de estados crudos de proveedores."
+    },
+    {
+      "id": "core-domain-provider-and-method-family",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/domain/provider.ts",
+        "packages/payment-core/src/domain/payment-method-family.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-022",
+          "RFV2-023",
+          "RFV2-024"
+        ],
+        "userStories": [
+          "US-004",
+          "US-016"
+        ],
+        "epicsOrFeatures": [
+          "F-304",
+          "F-401",
+          "F-501"
+        ],
+        "tasksTecnicas": [
+          "TT-014"
+        ],
+        "adrs": [
+          "ADR-0003"
+        ]
+      },
+      "notes": "Catalogo de proveedores y familias de metodo."
+    },
+    {
+      "id": "core-contracts-payment-provider",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/contracts/payment-provider-adapter.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-017",
+          "RFV2-026",
+          "RFV2-029"
+        ],
+        "userStories": [
+          "US-005",
+          "US-007"
+        ],
+        "epicsOrFeatures": [
+          "F-701",
+          "F-702",
+          "F-703",
+          "F-704"
+        ],
+        "tasksTecnicas": [
+          "TT-006"
+        ],
+        "adrs": [
+          "ADR-0003"
+        ]
+      },
+      "notes": "Contrato base para adapters de cobro."
+    },
+    {
+      "id": "core-contracts-payout-provider",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/contracts/payout-provider-adapter.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-042",
+          "RFV2-045"
+        ],
+        "userStories": [
+          "US-014"
+        ],
+        "epicsOrFeatures": [
+          "F-901",
+          "F-902",
+          "F-903"
+        ],
+        "tasksTecnicas": [
+          "TT-007"
+        ],
+        "adrs": [
+          "ADR-0003"
+        ]
+      },
+      "notes": "Contrato base para adapters de payouts."
+    },
+    {
+      "id": "core-orchestration-retry-policy",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/orchestration/retry-policy.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-019",
+          "RFV2-020",
+          "RFV2-036",
+          "RFV2-038",
+          "RFV2-039",
+          "RFV2-040"
+        ],
+        "userStories": [
+          "US-008",
+          "US-010"
+        ],
+        "epicsOrFeatures": [
+          "F-603",
+          "F-604",
+          "F-605"
+        ],
+        "tasksTecnicas": [
+          "TT-019"
+        ],
+        "adrs": [
+          "ADR-0001",
+          "ADR-0003"
+        ]
+      },
+      "notes": "Politica canonica de retry, fallback y reintento guiado."
+    },
+    {
+      "id": "core-provider-capability-matrix",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/providers/capability-matrix.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-006",
+          "RFV2-007",
+          "RFV2-008",
+          "RFV2-009",
+          "RFV2-010"
+        ],
+        "userStories": [
+          "US-009"
+        ],
+        "epicsOrFeatures": [
+          "F-204",
+          "F-304",
+          "F-601"
+        ],
+        "tasksTecnicas": [
+          "TT-008"
+        ],
+        "adrs": [
+          "ADR-0003"
+        ]
+      },
+      "notes": "Matriz de capacidades por proveedor, metodo y direccion."
+    },
+    {
+      "id": "core-provider-errors",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/errors/provider-error.ts"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-038"
+        ],
+        "userStories": [
+          "US-008"
+        ],
+        "epicsOrFeatures": [
+          "F-605"
+        ],
+        "tasksTecnicas": [
+          "TT-009"
+        ],
+        "adrs": [
+          "ADR-0003"
+        ]
+      },
+      "notes": "Clasificacion y encapsulamiento de errores de proveedor."
+    },
+    {
+      "id": "core-public-index",
+      "owner": "payment-core",
+      "repoSurface": "packages/payment-core",
+      "pathPrefixes": [
+        "packages/payment-core/src/index.ts"
+      ],
+      "references": {
+        "requirements": [],
+        "userStories": [
+          "US-020"
+        ],
+        "epicsOrFeatures": [
+          "F-1204"
+        ],
+        "tasksTecnicas": [
+          "TT-001"
+        ],
+        "adrs": [
+          "ADR-0004"
+        ]
+      },
+      "notes": "Entrada publica del package reusable."
+    },
+    {
+      "id": "supabase-bootstrap-schema",
+      "owner": "integraciones-datos",
+      "repoSurface": "supabase",
+      "pathPrefixes": [
+        "supabase/migrations/",
+        "supabase/seed.sql"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-011",
+          "RFV2-016",
+          "RFV2-032"
+        ],
+        "userStories": [
+          "US-001",
+          "US-002",
+          "US-007"
+        ],
+        "epicsOrFeatures": [
+          "F-301",
+          "F-302",
+          "F-801"
+        ],
+        "tasksTecnicas": [
+          "TT-003",
+          "TT-004",
+          "TT-005",
+          "TT-016",
+          "TT-017"
+        ],
+        "adrs": [
+          "ADR-0002",
+          "ADR-0004"
+        ]
+      },
+      "notes": "Bootstrap de persistencia para ordenes, intentos, referencias y eventos."
+    },
+    {
+      "id": "tests-contract-providers-and-webhooks",
+      "owner": "qa-security-review",
+      "repoSurface": "tests/contract",
+      "pathPrefixes": [
+        "tests/contract/"
+      ],
+      "references": {
+        "requirements": [
+          "RFV2-027",
+          "RFV2-028",
+          "RFV2-029",
+          "RFV2-030"
+        ],
+        "userStories": [
+          "US-005",
+          "US-007"
+        ],
+        "epicsOrFeatures": [
+          "F-701",
+          "F-702",
+          "F-703",
+          "F-704",
+          "F-801",
+          "F-802",
+          "F-803",
+          "F-804"
+        ],
+        "tasksTecnicas": [
+          "TT-006",
+          "TT-007",
+          "TT-016",
+          "TT-017",
+          "TT-018"
+        ],
+        "adrs": [
+          "ADR-0001",
+          "ADR-0003"
+        ]
+      },
+      "notes": "Pruebas de contrato para adapters, webhooks y polling."
+    }
+  ]
+}

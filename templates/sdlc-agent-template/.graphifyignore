@@ -1,0 +1,30 @@
+# .graphifyignore - alcance de investigacion interna {{PROJECT_NAME}}
+#
+# Politica:
+# - Indexar docs/ + openspec/ + contexto operativo de raiz.
+# - Incluir .github/agents, .github/skills y .github/agent-state.
+# - Excluir codigo de producto del primer build (apps/, packages/, infra/).
+
+*
+!AGENTS.md
+!CLAUDE.md
+!CONTEXT.md
+!README.md
+!indice-operativo.md
+!openspec/
+!openspec/**
+!docs/
+!docs/**
+!.github/agents/
+!.github/agents/**
+!.github/skills/
+!.github/skills/**
+!.github/agent-state/
+!.github/agent-state/**
+**/node_modules/
+**/dist/
+**/.next/
+**/.turbo/
+**/coverage/
+**/.git/
+graphify-out/

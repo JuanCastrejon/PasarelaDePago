@@ -1,0 +1,80 @@
+name: legacy-brownfield-sdd
+version: 1
+description: "Workflow brownfield para migracion legacy: research -> proposal -> specs -> design -> tasks"
+artifacts:
+  - id: research
+    generates: research.md
+    description: Investigacion brownfield con evidencia operativa y documental antes de proponer
+    template: research.md
+    instruction: >
+      Create the research document that grounds the change in existing evidence
+      before any proposal is written.
+
+
+      Use this schema when the repository is migrating an existing system,
+      process, or runtime and source precedence matters.
+
+
+      The research artifact MUST capture:
+      - source precedence (primary vs secondary)
+      - current observed behavior
+      - AS-IS and TO-BE flows
+      - business rules detected
+      - drift between sources
+      - candidate capabilities and open questions
+
+
+      Guardrails:
+      - distinguish confirmed evidence, inference, and open gaps
+      - contrast UI, navigation, or permission behavior against the live source when available
+      - catalog every detected rule in docs/domain/reglas-negocio-catalogo.md
+    requires: []
+  - id: proposal
+    generates: proposal.md
+    description: Initial proposal document outlining the change
+    template: proposal.md
+    instruction: >
+      Create the proposal using the research artifact as primary input.
+      Keep it concise, traceable, and explicit about dependencies and impact.
+    requires:
+      - research
+  - id: specs
+    generates: specs/**/*.md
+    description: Detailed specifications for the change
+    template: spec.md
+    instruction: >
+      Create delta specification files that define WHAT the system should do.
+      Model only confirmed behavior and use MODIFIED only when the contract changes.
+    requires:
+      - proposal
+  - id: design
+    generates: design.md
+    description: Technical design document with implementation details
+    template: design.md
+    instruction: >
+      Create the design document that explains HOW to implement the change in a
+      brownfield migration context. Distinguish parity work, simplifications,
+      migration sequencing, and future work.
+    requires:
+      - research
+      - proposal
+      - specs
+  - id: tasks
+    generates: tasks.md
+    description: Implementation checklist with trackable tasks
+    template: tasks.md
+    instruction: >
+      Create the task list that breaks down the implementation work into
+      verifiable checkboxes. Include documentation updates and validations when applicable.
+    requires:
+      - research
+      - specs
+      - design
+apply:
+  requires:
+    - tasks
+  tracks: tasks.md
+  instruction: |
+    Read research, proposal, specs, and design before implementing.
+    Work through pending tasks, mark them complete as you go, and pause when
+    you detect blockers, source conflicts, or missing evidence.

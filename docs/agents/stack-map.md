@@ -20,5 +20,6 @@ Ayudar a skills externas y agentes a detectar rapidamente:
 
 La relacion entre estas superficies y el backlog/arquitectura queda fijada en:
 
-- `docs/agents/matriz-de-trazabilidad-por-superficie1.md`
+- `docs/agents/matriz-de-trazabilidad-por-superficie.md`
 - `.github/agents/surface-traceability.json`
+

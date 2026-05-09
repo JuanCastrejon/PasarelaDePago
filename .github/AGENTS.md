@@ -36,6 +36,8 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 ### Skills internas del repositorio
 
 - contexto del proyecto: `.github/skills/contexto-proyecto/SKILL.md`
+- analisis funcional y enriquecimiento: `.github/skills/enrich-us/SKILL.md`
+- cierre de trabajo y PRs: `.github/skills/commit/SKILL.md`
 - gitflow y PRs: `.github/skills/gitflow-prs/SKILL.md`
 - operacion CLI y DevOps: `.github/skills/operacion-cli-devops/SKILL.md`
 - documentacion viva: `.github/skills/documentacion-viva/SKILL.md`
@@ -104,6 +106,9 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 
 - validacion estructural: `npm run validate:control-plane`
 - validacion de drift documental y operativo: `npm run validate:drift`
+- validacion de nombres canonicos documentales: `npm run validate:docs-canonical`
+- validacion de research enriquecido: `npm run validate:enhanced-research -- <change-name>`
+- validacion OpenSpec: `npm run validate:openspec`
 - validacion de trazabilidad de slice: `npm run validate:slice-traceability`
 - validacion de trazabilidad por superficie: `npm run validate:surface-traceability`
 - validacion de guardrails semanticos: `npm run validate:semantic-guardrails`
@@ -113,22 +118,25 @@ Este archivo centraliza la configuracion operativa del agente para `PasarelaDePa
 1. Cargar primero la skill `contexto-proyecto`.
 2. Si la tarea cruza fases o agentes, leer `.github/agents/ownership-matrix.md` y `.github/agent-state/phase-status.yaml`.
 3. Cargar luego la skill especifica de la tarea.
-4. Usar la plantilla de `handoff` cuando una salida deba consumirse por otro agente o rol humano.
-5. Mantener idioma espanol en documentacion, PRs, issues y commits.
-6. Mantener identificadores de codigo en ingles.
-7. Toda rama de trabajo nace desde `develop`.
-8. No hacer push directo a `develop` ni `main`.
-9. Todo cambio va por PR.
-10. Los commits deben ser atomicos y en espanol.
-11. Si hay artefactos privados, evidencia sensible o material solo de referencia, deben quedar fuera del repo.
-12. Si el cambio toca codigo de producto, skills o control plane, debe pasar las validaciones de `control-plane`, `drift`, `slice-traceability`, `surface-traceability` y `semantic-guardrails`.
+4. Si el cambio toca comportamiento funcional no trivial, revisar `openspec/specs/` y `docs/guides/adopcion-openspec-sdd.md`.
+5. Si la capacidad no existe o va a cambiar, abrir o actualizar un change en `openspec/changes/` antes de tocar codigo de producto.
+6. Usar la plantilla de `handoff` cuando una salida deba consumirse por otro agente o rol humano.
+7. Mantener idioma espanol en documentacion, PRs, issues y commits.
+8. Mantener identificadores de codigo en ingles.
+9. Toda rama de trabajo nace desde `develop`.
+10. No hacer push directo a `develop` ni `main`.
+11. Todo cambio va por PR.
+12. Los commits deben ser atomicos y en espanol.
+13. Si hay artefactos privados, evidencia sensible o material solo de referencia, deben quedar fuera del repo.
+14. Los documentos activos usan nombres canonicos; las versiones reemplazadas se mueven a `docs/archive/`.
+15. Si el cambio toca codigo de producto, skills, OpenSpec o control plane, debe pasar las validaciones aplicables de `control-plane`, `drift`, `docs-canonical`, `slice-traceability`, `surface-traceability`, `semantic-guardrails` y `openspec`.
 
 ## Modelo de trabajo
 
 La estructura objetivo del proyecto es:
 
 - `SDD` personal para pensamiento y ejecucion disciplinada
-- `OpenSpec` como capa compartible de requisitos y backlog
+- `OpenSpec` como capa compartible de requisitos, capacidades canonicas y changes antes de implementacion
 - `Engram` como memoria persistente del proyecto en documentos y skills
 - skills internas para repetir criterios operativos
 - 2 agentes de control plane y 6 agentes especializados documentados en `.github/agents/`
@@ -141,6 +149,7 @@ La estructura objetivo del proyecto es:
 - `packages/payment-core`: dominio, contratos y orquestacion reusable
 - `supabase/`: arranque local del esquema y migraciones
 - `tests/contract/`: base para pruebas de contrato y adapters
+- `openspec/`: capacidades canonicas y changes activos
 - `docs/`: fuente historica y versionada del conocimiento
 
 ## Estado actual

@@ -28,4 +28,5 @@ Cada slice pack debe dejar claro:
 
 Slice pack disponible:
 
-- `slice-payment-order-bootstrap1.md`
+- `slice-payment-order-bootstrap.md`
+

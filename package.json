@@ -20,6 +20,9 @@
     "typecheck": "turbo run typecheck",
     "validate:control-plane": "node scripts/validate-control-plane.mjs",
     "validate:drift": "node scripts/validate-drift.mjs",
+    "validate:docs-canonical": "node scripts/validate-docs-canonical.mjs",
+    "validate:enhanced-research": "node scripts/validate-enhanced-research.js",
+    "validate:openspec": "npx @fission-ai/openspec@latest validate --all",
     "validate:slice-traceability": "node scripts/validate-slice-traceability.mjs",
     "validate:surface-traceability": "node scripts/validate-surface-traceability.mjs",
     "validate:semantic-guardrails": "node scripts/validate-semantic-guardrails.mjs"

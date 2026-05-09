@@ -61,7 +61,7 @@ docs/               -> dominio, arquitectura, backlog, proceso e investigacion
 - `packages/payment-core` concentra dominio puro, contratos y orquestacion reusable
 - `supabase/` concentra config local, migraciones y seeds
 - la documentacion siempre acompana al codigo; no se deja para el final
-- cuando un cambio importante sea documental, crear una nueva version numerada del documento en `docs/` en lugar de destruir el historial semantico
+- los documentos activos deben usar nombres canonicos estables; si un documento se reemplaza, la version anterior se mueve a `docs/archive/` con metadatos de supersesion
 
 ## Reglas de flujo de trabajo
 
@@ -107,7 +107,9 @@ Gates proyectados por activarse por slice:
 Cada cambio relevante debe mantener sincronizados:
 
 - `README.md`
-- `docs/indice-maestro2.md` cuando exista una nueva navegacion fundacional
+- `indice-operativo.md` como mapa operativo raiz
+- `docs/indice-maestro.md` como mapa documental general
+- `openspec/specs/` y `openspec/changes/` cuando el cambio afecte capacidades o backlog canonico
 - documentos de dominio, arquitectura, backlog o proceso impactados
 - `.github/AGENTS.md` si cambia el flujo operativo
 - skills internas si cambian stack, criterios o workflow
@@ -125,3 +127,4 @@ Cada cambio relevante debe mantener sincronizados:
 2. cargar la skill especifica de la tarea
 3. si una skill externa contradice una regla interna, prevalece `.github/`
 4. si el cambio afecta arquitectura o flujo, sincronizar tambien la documentacion viva
+

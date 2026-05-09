@@ -1,0 +1,127 @@
+name: analysis-first-sdd
+version: 1
+description: "Workflow analysis-first: research -> proposal -> specs -> design -> tasks"
+artifacts:
+  - id: research
+    generates: research.md
+    description: Investigacion estructurada del dominio y del cambio antes de proponer
+    template: research.md
+    instruction: >
+      Create the research document that grounds the change in the project's
+      current evidence before any proposal is written.
+
+
+      This repository is in an analysis-first stage. Research is mandatory
+      because product, domain, and operational rules are still being
+      canonized.
+
+
+      The research artifact MUST capture:
+      - problem statement
+      - affected stakeholders
+      - sources reviewed
+      - current observed behavior
+      - AS-IS and TO-BE process when behavior changes
+      - business rules detected
+      - constraints or drift between sources
+      - proposed scope
+      - candidate capabilities
+      - open questions
+
+
+      Guardrails:
+      - distinguish confirmed findings, inference, and open gaps
+      - cite repository evidence explicitly
+      - catalog every business rule in docs/domain/reglas-negocio-catalogo.md
+      - use Spanish for the artifact
+    requires: []
+  - id: proposal
+    generates: proposal.md
+    description: Initial proposal outlining why the change is needed
+    template: proposal.md
+    instruction: >
+      Create the proposal using the research artifact as primary input.
+
+
+      Include:
+      - why
+      - what changes
+      - capabilities (new and modified)
+      - dependency map
+      - impact
+      - feasibility and effort
+
+
+      Guardrails:
+      - derive capabilities from evidence, not guesswork
+      - keep the proposal concise and behavior-oriented
+      - use stable kebab-case capability names
+    requires:
+      - research
+  - id: specs
+    generates: specs/**/*.md
+    description: Delta specifications for the change
+    template: spec.md
+    instruction: >
+      Create delta specification files that define WHAT the system should do.
+
+
+      Use one folder per capability under specs/<capability>/spec.md.
+      Use ADDED, MODIFIED, REMOVED, or RENAMED requirement sections.
+      Every requirement MUST include at least one scenario using four hashes.
+
+
+      Guardrails:
+      - model only confirmed behavior
+      - keep design and implementation detail out of specs
+      - use MODIFIED only when the contract changes
+    requires:
+      - proposal
+  - id: design
+    generates: design.md
+    description: Technical design document with implementation decisions
+    template: design.md
+    instruction: >
+      Create the design artifact when the change benefits from technical
+      decisions before coding.
+
+
+      Include:
+      - context
+      - goals and non-goals
+      - decisions with rationale
+      - risks and trade-offs
+      - migration or rollout plan when applicable
+      - open questions
+    requires:
+      - research
+      - proposal
+      - specs
+  - id: tasks
+    generates: tasks.md
+    description: Implementation checklist with verifiable tasks
+    template: tasks.md
+    instruction: >
+      Create the task list that breaks down the implementation work.
+
+
+      Every task MUST be a checkbox in the form `- [ ] X.Y description`.
+      Group tasks under numbered headings and keep them small enough for a
+      single session.
+
+
+      Guardrails:
+      - include documentation updates when behavior or governance changes
+      - include validate:* scripts and tests when applicable
+    requires:
+      - research
+      - specs
+      - design
+apply:
+  requires:
+    - tasks
+  tracks: tasks.md
+  instruction: |
+    Read research, proposal, specs, and design before implementing.
+    Work through pending tasks, mark them complete as you go, and keep
+    documentation and specs aligned with the implementation.

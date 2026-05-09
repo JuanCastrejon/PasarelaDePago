@@ -6,10 +6,10 @@
 
 ## Documentacion base
 
-- indice maestro: `docs/indice-maestro1.md`
+- indice maestro: `docs/indice-maestro.md`
 - contexto: `CONTEXT.md`
-- sistema multiagente: `docs/proceso/sistema-de-trabajo-multiagente1.md`
-- gobernanza de skills: `docs/proceso/gobernanza-de-skills-y-fuentes1.md`
+- sistema multiagente: `docs/proceso/sistema-de-trabajo-multiagente.md`
+- gobernanza de skills: `docs/proceso/gobernanza-de-skills-y-fuentes.md`
 
 ## Plataformas
 
@@ -25,3 +25,4 @@
 - `main`: rama estable y publica
 - `develop`: rama de integracion
 - `feature/estructura-operativa-multiagente`: rama actual del trabajo de bootstrap
+

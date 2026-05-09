@@ -12,10 +12,10 @@ Use this skill when the project is ready to move from repo-first research to Azu
 1. Read:
    - `CONTEXT.md`
    - `docs/plan-implementacion-pasarela-colombia.md`
-   - `docs/plan-implementacion-pasarela-colombia1.md`
+   - `docs/plan-implementacion-pasarela-colombia.md`
    - `docs/requisitos/requisitos-y-casos-de-uso.md`
    - `docs/requisitos/historias-de-usuario.md`
-   - `docs/proceso/azure-devops-y-gobierno-del-proyecto1.md`
+   - `docs/proceso/azure-devops-y-gobierno-del-proyecto.md`
 2. Do not create work items blindly. First confirm:
    - glossary is stable enough
    - epics are clear
@@ -44,3 +44,5 @@ Use this skill when the project is ready to move from repo-first research to Azu
 - wiki structure
 - queries and dashboards to create
 - traceability rules for branches and PRs
+
+

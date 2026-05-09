@@ -100,12 +100,12 @@ const changedFiles = collectChangedFiles(baseRef);
 const errors = [];
 const warnings = [];
 
-const requirementsDoc = readFile("docs/requisitos/requisitos-funcionales-consolidados1.md");
-const storiesDoc = readFile("docs/backlog/user-stories-priorizadas1.md");
-const epicsDoc = readFile("docs/backlog/epics-y-features1.md");
-const tasksDoc = readFile("docs/backlog/tasks-tecnicas-iniciales1.md");
-const adrIndexDoc = readFile("docs/adr/adrs-base1.md");
-const docMatrix = readFile("docs/agents/matriz-de-trazabilidad-por-superficie1.md");
+const requirementsDoc = readFile("docs/requisitos/requisitos-funcionales-consolidados.md");
+const storiesDoc = readFile("docs/backlog/user-stories-priorizadas.md");
+const epicsDoc = readFile("docs/backlog/epics-y-features.md");
+const tasksDoc = readFile("docs/backlog/tasks-tecnicas-iniciales.md");
+const adrIndexDoc = readFile("docs/adr/adrs-base.md");
+const docMatrix = readFile("docs/agents/matriz-de-trazabilidad-por-superficie.md");
 const adrFiles = fs.readdirSync("docs/adr");
 
 const ownedSurfaceMatch = currentSlice.match(/## Owned Surfaces\s+([\s\S]*?)(?=\n## |$)/);
@@ -270,3 +270,5 @@ if (warnings.length > 0) {
     console.log(`- ${warning}`);
   }
 }
+
+

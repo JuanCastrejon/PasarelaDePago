@@ -1,0 +1,61 @@
+# .graphifyignore - alcance de investigacion interna PasarelaDePago
+#
+# Politica (v1 - 2026-05-09):
+# - Indexar docs/ + openspec/ + contexto operativo de raiz.
+# - Incluir .github/agents, .github/skills y .github/agent-state porque
+#   gobiernan el flujo multiagente y el control plane.
+# - Excluir codigo de producto del primer build (apps/, packages/, supabase/)
+#   para priorizar investigacion documental y gobierno.
+# - El grafo es para investigacion, no para implementacion. El codigo
+#   se consulta via rg o herramientas de auditoria cuando se necesita.
+#
+# Sintaxis: igual que .gitignore. Patron deny-all + whitelist con `!`.
+
+# Deny-all
+*
+
+# Whitelist raiz y meta
+!AGENTS.md
+!CLAUDE.md
+!CHANGELOG.md
+!CONTEXT.md
+!README.md
+!indice-operativo.md
+
+# Whitelist OpenSpec / SDD (completo)
+!openspec/
+!openspec/**
+
+# Whitelist docs/ completo
+!docs/
+!docs/**
+
+# Whitelist .github/ agentes y skills (gobiernan el flujo)
+!.github/agents/
+!.github/agents/**
+!.github/skills/
+!.github/skills/**
+!.github/agent-state/
+!.github/agent-state/**
+
+# Re-deny binarios y artefactos cache
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp4
+*.mov
+*.mp3
+*.wav
+**/node_modules/
+**/dist/
+**/.next/
+**/.turbo/
+**/build/
+**/coverage/
+**/__pycache__/
+**/.venv/
+**/.git/
+graphify-out/

@@ -17,9 +17,9 @@ const requiredFiles = [
   ".github/agent-state/handoffs/TEMPLATE.md",
   ".github/agent-state/templates/current-slice-template.md",
   ".github/agent-state/templates/phase-gate.md",
-  "docs/agents/mapa-de-agentes-y-handoffs1.md",
-  "docs/agents/matriz-de-trazabilidad-por-superficie1.md",
-  "docs/agents/guardrails-semanticos-del-dominio1.md"
+  "docs/agents/mapa-de-agentes-y-handoffs.md",
+  "docs/agents/matriz-de-trazabilidad-por-superficie.md",
+  "docs/agents/guardrails-semanticos-del-dominio.md"
 ];
 
 const managedAgentIds = [
@@ -234,8 +234,8 @@ if (exists(".github/agent-state/phase-status.yaml")) {
   }
 }
 
-if (exists("docs/agents/mapa-de-agentes-y-handoffs1.md")) {
-  const agentMap = readFile("docs/agents/mapa-de-agentes-y-handoffs1.md");
+if (exists("docs/agents/mapa-de-agentes-y-handoffs.md")) {
+  const agentMap = readFile("docs/agents/mapa-de-agentes-y-handoffs.md");
 
   for (const label of [
     "Planificador Opus",
@@ -296,3 +296,5 @@ if (warnings.length > 0) {
     console.log(`- ${message}`);
   }
 }
+
+

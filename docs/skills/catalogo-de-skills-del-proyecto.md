@@ -1,14 +1,45 @@
-# Catalogo de Skills del Proyecto
+---
+status: active
+updated: 2026-05-09
+supersedes:
+  - docs/skills/catalogo-de-skills-del-proyecto2.md
+---
 
-Fecha de actualizacion: 2026-04-29
+# Catalogo de Skills del Proyecto v2
+
+Fecha de actualizacion: 2026-05-09
 
 ## 1. Objetivo
 
-Las skills del proyecto existen para convertir investigacion dispersa en un proceso de trabajo consistente. No son decorativas: deben ayudar a mantener foco, calidad y repetibilidad.
+Consolidar las skills que ya gobiernan el trabajo del proyecto, separando las internas del repo de las externas curadas por stack.
 
-## 2. Skills externas ya instaladas
+## 2. Skills internas del repositorio
 
-Estas skills ya quedaron instaladas en Codex a nivel local:
+### Core de operacion
+
+- `contexto-proyecto`
+- `documentacion-viva`
+- `gitflow-prs`
+- `operacion-cli-devops`
+- `orquestacion-multiagente`
+
+### Core de dominio
+
+- `arquitectura-dominio-pagos`
+- `backend-audit-pagos`
+- `ui-ux-operaciones-pagos`
+
+### Dominio especializado en `project-skills/`
+
+- auditoria de proveedores
+- webhooks y failover
+- estados asincronos
+- settlement y conciliacion
+- onboarding y payouts
+
+## 3. Skills externas curadas
+
+### Desde `mattpocock/skills`
 
 - `setup-matt-pocock-skills`
 - `grill-with-docs`
@@ -16,65 +47,38 @@ Estas skills ya quedaron instaladas en Codex a nivel local:
 - `to-issues`
 - `tdd`
 - `diagnose`
-- `supabase-postgres-best-practices`
-- `next-best-practices`
-- `deploy-to-vercel`
-- `create-plan`
+- `improve-codebase-architecture`
+- `zoom-out`
+- `triage`
 
-## 3. Skills propias del proyecto creadas en el repo
+### Desde `ComposioHQ/awesome-codex-skills`
 
-Ubicacion:
+- `webapp-testing`
+- `deploy-pipeline`
+- `issue-triage`
 
-- [payment-provider-audit](/C:/Users/juand/source/repos/PasarelaDePago/project-skills/payment-provider-audit/SKILL.md)
-- [payment-orchestration-review](/C:/Users/juand/source/repos/PasarelaDePago/project-skills/payment-orchestration-review/SKILL.md)
-- [payment-requirements-documenter](/C:/Users/juand/source/repos/PasarelaDePago/project-skills/payment-requirements-documenter/SKILL.md)
+### Desde `autoskills`
 
-## 4. Rol de cada skill propia
+- skills detectadas por `Next.js`, `Supabase`, `Turborepo`, `Playwright`, `Vitest`, `Tailwind`, `Zod`
 
-### payment-provider-audit
+## 4. Estado de instalacion
 
-Usar cuando:
+- `autoskills` ya se ejecuto localmente para el stack detectado del repo
+- tambien quedaron instaladas skills adicionales de `mattpocock/skills` y `ComposioHQ/awesome-codex-skills` en `~/.codex/skills`
+- `setup-matt-pocock-skills` ya quedo aterrizada en `AGENTS.md` y `docs/agents/`
 
-- investiguemos un proveedor nuevo
-- comparemos capacidades
-- validemos si un metodo existe de verdad
-- revisemos repos publicos y SDKs
+## 5. Regla de uso
 
-### payment-orchestration-review
+1. primero skills internas
+2. luego skills de dominio local
+3. despues skills externas por stack
 
-Usar cuando:
+## 6. Criterio de madurez
 
-- diseñemos adapters
-- definamos reglas de routing
-- revisemos fallback, retries y normalizacion de webhooks
-- diseñemos payouts o reconciliacion
+Una skill es util si:
 
-### payment-requirements-documenter
+- reduce ambiguedad
+- acelera una tarea repetible
+- protege una regla del proyecto
+- mejora calidad visible en el repo
 
-Usar cuando:
-
-- traduzcamos investigacion a requisitos
-- generemos historias de usuario
-- preparemos PRD
-- queramos mantener documentacion de producto con estructura consistente
-
-## 5. Skills futuras recomendadas
-
-- `payment-webhook-hardening`
-- `payment-reconciliation-playbook`
-- `payout-operations-runbook`
-- `portfolio-readiness`
-- `provider-sandbox-verification`
-
-## 6. Regla de trabajo recomendada
-
-Orden sugerido de uso:
-
-1. `payment-provider-audit`
-2. `payment-requirements-documenter`
-3. `grill-with-docs`
-4. `to-prd`
-5. `to-issues`
-6. `payment-orchestration-review`
-7. `tdd`
-8. `diagnose`

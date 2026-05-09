@@ -214,3 +214,4 @@ for (const info of infos) {
     `- ${info.name}: ${info.supportingFiles.join(", ")} respaldan ${info.triggeredFiles.join(", ")}`
   );
 }
+

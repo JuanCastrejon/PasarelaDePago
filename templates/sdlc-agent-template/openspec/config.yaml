@@ -1,0 +1,18 @@
+schema: analysis-first-sdd
+
+context: |
+  Proyecto analysis-first para `{{PROJECT_NAME}}`.
+  El repositorio usa `indice-operativo.md` como mapa operativo raiz y `docs/`
+  como corpus historico y versionado.
+  Fuentes primarias de analisis en este proyecto:
+  - `docs/domain/`
+  - `docs/requirements/`
+  - `docs/backlog/`
+  - `docs/adr/`
+  Toda regla de negocio detectada debe catalogarse en
+  `docs/domain/reglas-negocio-catalogo.md`.
+  Los artefactos OpenSpec se escriben en espanol.
+  Los identificadores de capacidades y carpetas permanecen en kebab-case en ingles.
+  Tracker operativo por defecto: `{{TRACKER}}`.
+  Flujo git obligatorio del proyecto: `{{DEFAULT_BRANCH_FLOW}}`.
+  Guia operativa: `docs/guides/adopcion-openspec-sdd.md`.

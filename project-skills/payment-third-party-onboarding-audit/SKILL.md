@@ -47,6 +47,9 @@ Use this skill when the question is not just "can provider X charge a card?" but
 
 ## Project docs to consult or update
 
-- `docs/investigacion/compliance-y-riesgo-para-terceros1.md`
-- `docs/investigacion/modelos-operativos-y-onboarding-para-terceros1.md`
-- `docs/requisitos/requisitos-operativos-y-no-funcionales1.md`
+- `docs/investigacion/compliance-y-riesgo-para-terceros.md`
+- `docs/investigacion/modelos-operativos-y-onboarding-para-terceros.md`
+- `docs/requisitos/requisitos-operativos-y-no-funcionales.md`
+
+
+

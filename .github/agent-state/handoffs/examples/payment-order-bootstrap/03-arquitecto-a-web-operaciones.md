@@ -20,7 +20,7 @@ Repo: planificacion -> ejecucion
 
 ## Artefactos de entrada
 
-- `slice-payment-order-bootstrap1.md`
+- `slice-payment-order-bootstrap.md`
 - `ADR-0004`
 - `apps/web/src/app/api/payment-orders/route.ts`
 - contrato o helper del `payment-core`
@@ -50,3 +50,4 @@ Repo: planificacion -> ejecucion
 ## Gate humano
 
 - `Testing`
+

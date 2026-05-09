@@ -36,6 +36,7 @@ copia_.github_otro_proyecto_de_referencia/
 coverage/
 .turbo/
 .cache/
+graphify-out/
 *.tsbuildinfo
 playwright-report/
 test-results/

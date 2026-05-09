@@ -1,7 +1,7 @@
 version: 1
 current_track: "fundacional"
-current_slice: "control-plane-agentes-v1"
-current_phase: "ejecucion"
+current_slice: "sdlc-template-bootstrap-v1"
+current_phase: "planificacion"
 
 source_of_truth:
   governance:
@@ -9,7 +9,7 @@ source_of_truth:
     - ".github/AGENTS.md"
   context:
     - "CONTEXT.md"
-    - "docs/indice-maestro2.md"
+    - "docs/indice-maestro.md"
   operational_state:
     - ".github/agent-state/current-slice.md"
     - ".github/agent-state/open-decisions.md"
@@ -38,3 +38,5 @@ active_gates:
 
 notes:
   - "Esta v1 introduce agentes versionados y estado compartido antes de profundizar implementacion de producto."
+  - "La rama feature/sdlc-template-bootstrap inicia el piloto para plantilla reusable y bootstrap de analisis."
+

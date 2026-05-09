@@ -1,0 +1,46 @@
+schema: analysis-first-sdd
+
+context: |
+  Proyecto analysis-first para una plataforma de payment orchestration orientada a Colombia.
+  El repositorio ya cuenta con un corpus de investigacion y definicion en `docs/`.
+  `docs/indice-maestro.md` conserva la navegacion historica y `indice-operativo.md`
+  es el mapa operativo raiz para agentes.
+  `openspec/specs/` concentrara las capacidades canónicas vigentes y
+  `openspec/changes/` la evolucion futura del producto.
+  Fuentes primarias de analisis en este proyecto:
+  - `docs/dominio/`
+  - `docs/requisitos/`
+  - `docs/backlog/`
+  - `docs/adr/`
+  - `docs/investigacion/`
+  - `docs/matriz/`
+  Toda regla de negocio detectada debe catalogarse en
+  `docs/domain/reglas-negocio-catalogo.md`.
+  Los artefactos OpenSpec se escriben en espanol.
+  Los identificadores de capacidades y carpetas permanecen en kebab-case en ingles.
+  Tracker operativo por defecto: GitHub Issues con etiquetas
+  `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`.
+  Flujo git obligatorio del proyecto: `feature/* -> develop -> main` via PR.
+  Guia operativa: `docs/guides/adopcion-openspec-sdd.md`.
+
+rules:
+  research:
+    - Investigar primero en el corpus del repositorio antes de proponer una capacidad nueva.
+    - Separar siempre hallazgos confirmados, inferencias y vacios abiertos.
+    - Declarar stakeholders afectados, reglas de negocio, impacto operativo y viabilidad preliminar.
+    - Toda regla de negocio detectada debe catalogarse en `docs/domain/reglas-negocio-catalogo.md`.
+    - Si el cambio altera un flujo observable, documentar AS-IS y TO-BE.
+  proposal:
+    - Mantener el change acotado a capacidades trazables.
+    - Declarar capacidades nuevas y modificadas con nombres estables en kebab-case.
+    - Incluir mapa de dependencias, impacto y estimacion de esfuerzo.
+  specs:
+    - Usar requisitos normativos con escenarios Given/When/Then.
+    - No mover decisiones de implementacion a las specs.
+    - Si la evidencia es parcial, modelar solo lo confirmado y dejar la brecha registrada en research.
+  design:
+    - Explicar decisiones tecnicas, trade-offs, secuencia entre superficies y riesgos.
+    - Distinguir claramente alcance actual, simplificaciones intencionales y trabajo futuro.
+  tasks:
+    - Descomponer en slices pequenos, verificables y con validaciones explicitas.
+    - Incluir documentacion viva y `validate:*` cuando aplique.

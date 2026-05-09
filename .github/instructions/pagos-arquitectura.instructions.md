@@ -25,5 +25,6 @@ description: "Reglas de arquitectura para pagos asincronos, PSE, Bre-B, webhooks
 ## Verificacion previa a cambios
 
 - leer `docs/arquitectura/orquestacion-failover-y-bre-b.md`
-- leer `docs/matriz/matriz-canonica-de-estados-por-proveedor1.md`
-- leer `docs/dominio/modelo-de-dominio-canonico1.md`
+- leer `docs/matriz/matriz-canonica-de-estados-por-proveedor.md`
+- leer `docs/dominio/modelo-de-dominio-canonico.md`
+
