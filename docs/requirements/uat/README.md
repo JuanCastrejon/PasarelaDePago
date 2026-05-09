@@ -26,5 +26,5 @@ Ejemplo: `plan-uat-F1.md`.
 
 ## Plantilla
 
-Usar [TEMPLATE.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/requirements/uat/TEMPLATE.md)
+Usar [TEMPLATE.md](./TEMPLATE.md)
 como base.
