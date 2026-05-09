@@ -7,7 +7,7 @@ supersedes:
 
 # Catalogo de Skills del Proyecto v2
 
-Fecha de actualizacion: 2026-04-30
+Fecha de actualizacion: 2026-05-09
 
 ## 1. Objetivo
 
@@ -65,6 +65,7 @@ Consolidar las skills que ya gobiernan el trabajo del proyecto, separando las in
 
 - `autoskills` ya se ejecuto localmente para el stack detectado del repo
 - tambien quedaron instaladas skills adicionales de `mattpocock/skills` y `ComposioHQ/awesome-codex-skills` en `~/.codex/skills`
+- `setup-matt-pocock-skills` ya quedo aterrizada en `AGENTS.md` y `docs/agents/`
 
 ## 5. Regla de uso
 

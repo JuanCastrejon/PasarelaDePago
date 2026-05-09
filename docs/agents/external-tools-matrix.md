@@ -1,6 +1,6 @@
 # External tools matrix
 
-Inventario inicial de frameworks, bundles de skills y herramientas externas que forman parte del flujo operativo de `PasarelaDePago`, con foco en lo que ya esta disponible hoy y lo que entra en la cola del bootstrap.
+Inventario operativo final de frameworks, bundles de skills y herramientas externas que forman parte del flujo de `PasarelaDePago`, con foco en lo ya validado dentro del piloto y en lo que entra al template reusable.
 
 > Ultima auditoria: 2026-05-09. Este documento es la referencia viva para decidir que parte del framework entra a la plantilla base y que parte sigue siendo opcional por proyecto.
 
@@ -62,9 +62,9 @@ Inventario inicial de frameworks, bundles de skills y herramientas externas que 
 - **Trigger**:
   - no se invoca como skill unica; sus skills quedan disponibles para el agente segun el stack
 - **Template base**: `documentacion si`, `instalacion no`
-- **Siguiente paso recomendado**:
-  - mantener la allowlist curada
-  - documentar que el template solo trae la gobernanza, no la instalacion obligatoria
+- **Notas**:
+  - `skills-lock.json` y `.agents/skills/` son soporte local generado; la fuente versionada de gobierno es la allowlist
+  - el template solo documenta la gobernanza y el criterio de adopcion, no fuerza instalar skills detectadas por stack
 
 ## 4. caveman
 
@@ -86,6 +86,7 @@ Inventario inicial de frameworks, bundles de skills y herramientas externas que 
 - **Footprint local**:
   - skills globales verificadas en `~/.codex/skills/`: `setup-matt-pocock-skills`, `grill-with-docs`, `to-prd`, `to-issues`, `tdd`, `diagnose`, `improve-codebase-architecture`, `zoom-out`, `triage`
   - catalogadas en [catalogo-de-skills-del-proyecto.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/skills/catalogo-de-skills-del-proyecto.md)
+  - configuracion aplicada en [AGENTS.md](/C:/Users/juand/source/repos/PasarelaDePago/AGENTS.md), [issue-tracker.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/issue-tracker.md), [triage-labels.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/triage-labels.md) y [domain.md](/C:/Users/juand/source/repos/PasarelaDePago/docs/agents/domain.md)
 - **Trigger**:
   - `/setup-matt-pocock-skills`
   - `/grill-with-docs`
@@ -96,6 +97,7 @@ Inventario inicial de frameworks, bundles de skills y herramientas externas que 
 - **Convivencia acordada**:
   - `OpenSpec` es la fuente principal para especificacion y changes
   - `grill-with-docs`, `diagnose`, `triage`, `to-prd` y `to-issues` operan como complementos, no como flujo paralelo de verdad
+  - `setup-matt-pocock-skills` ya quedo absorbida por la configuracion canonica del repo; se reusa solo si cambia tracker, labels o layout documental
 
 ## 6. `ComposioHQ/awesome-codex-skills`
 
@@ -158,7 +160,7 @@ Inventario inicial de frameworks, bundles de skills y herramientas externas que 
 | enrich-us / commit | `✅` | si | skills de analisis y cierre activas |
 | autoskills | `✅` | solo gobernanza | util por stack, no obligatorio en todos los proyectos |
 | caveman | `✅` | solo documentacion | opt-in global |
-| mattpocock/skills | `✅` | solo documentacion | definir convivencia con OpenSpec |
+| mattpocock/skills | `✅` | solo documentacion | convivencia ya documentada con OpenSpec |
 | awesome-codex-skills | `✅` | solo documentacion | opcional por productividad |
 | Graphify | `✅` | solo documentacion | grafo documental ya construido |
 | BMAD-METHOD | `❌` | no | fuera del alcance actual |

@@ -8,7 +8,7 @@ supersedes:
 
 # Gobernanza de Skills y Fuentes v2
 
-Fecha de actualizacion: 2026-04-30
+Fecha de actualizacion: 2026-05-09
 
 ## 1. Objetivo
 
@@ -54,7 +54,9 @@ Una skill externa entra al flujo si:
 ## 5. Regla de versionado
 
 - `.github/skills/` y `project-skills/` si son fuente primaria
-- `.agents/skills/` y `skills-lock.json` si son generados por `autoskills`: soporte local, no versionados
+- `.agents/skills/` y `skills-lock.json` si son generados por `autoskills`: soporte local generado, no fuente primaria del repo
+- la fuente versionada de gobierno para `autoskills` es la allowlist en `.github/skills/operacion-cli-devops/references/autoskills-allowlist.md`
+- la fuente versionada de gobierno para `mattpocock/skills` es `AGENTS.md` junto con `docs/agents/issue-tracker.md`, `docs/agents/triage-labels.md` y `docs/agents/domain.md`
 
 ## 6. Resultado actual
 
@@ -79,4 +81,5 @@ La gobernanza ya no depende solo de "tener buenas ideas"; ahora depende de:
 - skills versionadas
 - allowlist documentada
 - proceso reproducible
+- layout documental y tracker configurados de forma explicita para las skills externas complementarias
 
