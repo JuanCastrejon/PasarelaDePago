@@ -154,6 +154,7 @@ La estructura objetivo del proyecto es:
 
 ## Estado actual
 
+- slice activa de producto: `payment-order-bootstrap`
 - repositorio remoto creado y publicado
 - `main` establecida como rama publica
 - `develop` usada como rama de integracion

@@ -2,60 +2,63 @@
 
 ## ID
 
-`sdlc-template-bootstrap-v1`
+`payment-order-bootstrap`
 
 ## Slice Type
 
-- `governance`
+- `hybrid`
 
 ## Owner Plane
 
-- `shared`
+- `payment-core`
+- `web-operaciones`
 
 ## SDLC Phase
 
-- planificacion de framework reusable
-- bootstrap operativo de analisis
+- implementacion producto minima
+- validacion tecnica de la vertical
 
 ## Objetivo
 
-Preparar la primera slice operativa para convertir el framework de trabajo actual en una plantilla reusable de inicio de proyecto, usando `PasarelaDePago` como piloto para bootstrap de analisis, gobierno documental y futura adopcion de `OpenSpec`.
+Implementar la primera vertical minima para crear una `payment_order` canonica e independiente de proveedor via `POST /api/payment-orders`, dejando explicito que no se crea `payment_attempt`.
 
 ## Alcance
 
-- rama de trabajo dedicada al bootstrap
-- slice de gobernanza para la iniciativa
-- documentacion de la estrategia `core -> profile -> project`
-- definicion del bootstrap aditivo para `PasarelaDePago`
-- preparacion de la cola para `OpenSpec`, skills de analisis y matriz de tools externas
+- helper o constructor canonico de `payment_order` en `packages/payment-core`
+- validacion minima de payload en `apps/web/src/app/api/payment-orders/route.ts`
+- respuesta HTTP `201` canonica y agnostica de proveedor
+- pruebas unitarias minimas del helper y del endpoint
 
 ## Fuera de alcance
 
-- cambios de codigo de producto en `apps/`, `packages/` o `supabase/`
-- reorganizacion masiva del corpus documental existente
-- bootstrap operativo de Azure DevOps en esta iteracion
+- persistencia real en `supabase`
+- creacion de `payment_attempt`
+- routing, fallback, retry o proveedor real
+- autenticacion o multi-tenant completo
 
 ## Source Traceability
 
 ### Requisitos
 
-- `N/A`
+- `RFV2-011`
 
 ### User Stories
 
-- `N/A`
+- `US-001`
 
 ### Epics o Features
 
-- `N/A`
+- `F-301`
 
 ### Tasks Tecnicas
 
-- `N/A`
+- `TT-003`
+- `TT-011`
 
 ### ADRs
 
-- `N/A`
+- `ADR-0002`
+- `ADR-0004`
 
 ### Fuentes de gobernanza
 
@@ -66,12 +69,14 @@ Preparar la primera slice operativa para convertir el framework de trabajo actua
 - `.github/skills/orquestacion-multiagente/SKILL.md`
 - `.github/skills/gitflow-prs/SKILL.md`
 - `docs/skills/catalogo-de-skills-del-proyecto.md`
+- `docs/backlog/slices/slice-payment-order-bootstrap.md`
+- `openspec/changes/payment-order-bootstrap/specs/payment-order-bootstrap/spec.md`
 
 ## Owned Surfaces
 
 - `.github`
-- `docs`
-- `scripts`
+- `apps/web`
+- `packages/payment-core`
 
 ## Entradas clave
 
@@ -102,4 +107,3 @@ Preparar la primera slice operativa para convertir el framework de trabajo actua
 
 - confirmar que el bootstrap siga siendo aditivo
 - confirmar el uso de `PasarelaDePago` como piloto antes de extraer el template a otro repo
-
