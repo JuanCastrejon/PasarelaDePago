@@ -20,9 +20,9 @@ Repo: planificacion -> ejecucion
 
 ## Artefactos de entrada
 
-- `slice-payment-order-bootstrap1.md`
+- `slice-payment-order-bootstrap.md`
 - `ADR-0002`
-- `docs/dominio/modelo-de-dominio-canonico1.md`
+- `docs/dominio/modelo-de-dominio-canonico.md`
 - `packages/payment-core/src/domain/payment-order.ts`
 
 ## Skills a cargar
@@ -49,3 +49,4 @@ Repo: planificacion -> ejecucion
 ## Gate humano
 
 - `Code Reviewer`
+

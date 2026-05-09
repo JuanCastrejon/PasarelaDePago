@@ -157,34 +157,34 @@ for (const requiredValidation of [
   }
 }
 
-const requirementsDoc = readFile("docs/requisitos/requisitos-funcionales-consolidados1.md");
-const storiesDoc = readFile("docs/backlog/user-stories-priorizadas1.md");
-const epicsDoc = readFile("docs/backlog/epics-y-features1.md");
-const tasksDoc = readFile("docs/backlog/tasks-tecnicas-iniciales1.md");
-const adrIndexDoc = readFile("docs/adr/adrs-base1.md");
+const requirementsDoc = readFile("docs/requisitos/requisitos-funcionales-consolidados.md");
+const storiesDoc = readFile("docs/backlog/user-stories-priorizadas.md");
+const epicsDoc = readFile("docs/backlog/epics-y-features.md");
+const tasksDoc = readFile("docs/backlog/tasks-tecnicas-iniciales.md");
+const adrIndexDoc = readFile("docs/adr/adrs-base.md");
 const adrFiles = fs.readdirSync("docs/adr");
 
 for (const requirementId of traceabilitySections.requisitos) {
   if (!requirementsDoc.includes(`\`${requirementId}\``)) {
-    errors.push(`El requisito ${requirementId} no existe en docs/requisitos/requisitos-funcionales-consolidados1.md`);
+    errors.push(`El requisito ${requirementId} no existe en docs/requisitos/requisitos-funcionales-consolidados.md`);
   }
 }
 
 for (const storyId of traceabilitySections.userStories) {
   if (!storiesDoc.includes(`\`${storyId}\``)) {
-    errors.push(`La user story ${storyId} no existe en docs/backlog/user-stories-priorizadas1.md`);
+    errors.push(`La user story ${storyId} no existe en docs/backlog/user-stories-priorizadas.md`);
   }
 }
 
 for (const epicOrFeatureId of traceabilitySections.epicsOrFeatures) {
   if (!epicsDoc.includes(`\`${epicOrFeatureId}\``)) {
-    errors.push(`El epic o feature ${epicOrFeatureId} no existe en docs/backlog/epics-y-features1.md`);
+    errors.push(`El epic o feature ${epicOrFeatureId} no existe en docs/backlog/epics-y-features.md`);
   }
 }
 
 for (const taskId of traceabilitySections.tasksTecnicas) {
   if (!tasksDoc.includes(`\`${taskId}\``)) {
-    errors.push(`La task tecnica ${taskId} no existe en docs/backlog/tasks-tecnicas-iniciales1.md`);
+    errors.push(`La task tecnica ${taskId} no existe en docs/backlog/tasks-tecnicas-iniciales.md`);
   }
 }
 
@@ -278,3 +278,5 @@ console.log("Slice traceability validation: PASS");
 for (const info of infos) {
   console.log(`- ${info}`);
 }
+
+

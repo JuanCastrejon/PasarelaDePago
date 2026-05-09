@@ -2,7 +2,7 @@
 
 ## ID
 
-`control-plane-agentes-v1`
+`sdlc-template-bootstrap-v1`
 
 ## Slice Type
 
@@ -14,63 +14,58 @@
 
 ## SDLC Phase
 
-- implementacion de gobernanza
-- validacion de proceso
+- planificacion de framework reusable
+- bootstrap operativo de analisis
 
 ## Objetivo
 
-Crear la primera version operativa del control plane multiagente del repositorio para que el SDLC tenga owners explicitos, artefactos de handoff, estado compartido versionado y validaciones ligeras de drift, trazabilidad de slice, cobertura por superficie real del repo y guardrails semanticos del dominio.
+Preparar la primera slice operativa para convertir el framework de trabajo actual en una plantilla reusable de inicio de proyecto, usando `PasarelaDePago` como piloto para bootstrap de analisis, gobierno documental y futura adopcion de `OpenSpec`.
 
 ## Alcance
 
-- manifiestos de agentes en `.github/agents/`
-- matriz de ownership por fase y superficie
-- estado compartido en `.github/agent-state/`
-- validaciones `control-plane` y `drift` integradas al flujo
-- matriz machine-readable de trazabilidad por superficie
-- validacion de cobertura por superficie
-- guardrails semanticos machine-readable
-- validacion automatica de invariantes del dominio
-- actualizacion de `.github/AGENTS.md` y docs de proceso
+- rama de trabajo dedicada al bootstrap
+- slice de gobernanza para la iniciativa
+- documentacion de la estrategia `core -> profile -> project`
+- definicion del bootstrap aditivo para `PasarelaDePago`
+- preparacion de la cola para `OpenSpec`, skills de analisis y matriz de tools externas
 
 ## Fuera de alcance
 
 - cambios de codigo de producto en `apps/`, `packages/` o `supabase/`
-- adopcion de una herramienta externa de memoria
-- automatizacion de hooks adicionales con logica de drift
+- reorganizacion masiva del corpus documental existente
+- bootstrap operativo de Azure DevOps en esta iteracion
 
 ## Source Traceability
 
 ### Requisitos
 
-- N/A
+- `N/A`
 
 ### User Stories
 
-- `US-001`
+- `N/A`
 
 ### Epics o Features
 
-- `F-301`
-- `F-1201`
-- `F-1202`
-- `F-1203`
+- `N/A`
 
 ### Tasks Tecnicas
 
-- `TT-011`
-- `TT-001`
+- `N/A`
 
 ### ADRs
 
-- `ADR-0002`
+- `N/A`
 
 ### Fuentes de gobernanza
 
-- `docs/proceso/sistema-de-trabajo-multiagente2.md`
-- `.github/AGENTS.md`
+- `docs/proceso/template-sdlc-y-bootstrap-de-analisis.md`
+- `docs/proceso/sistema-de-trabajo-multiagente.md`
+- `docs/proceso/consolidacion-documental-para-inicio-del-proyecto.md`
+- `docs/proceso/auditoria-de-personalizacion-y-brechas.md`
 - `.github/skills/orquestacion-multiagente/SKILL.md`
-- `docs/proceso/sdd-openspec-engram1.md`
+- `.github/skills/gitflow-prs/SKILL.md`
+- `docs/skills/catalogo-de-skills-del-proyecto.md`
 
 ## Owned Surfaces
 
@@ -80,28 +75,31 @@ Crear la primera version operativa del control plane multiagente del repositorio
 
 ## Entradas clave
 
-- `docs/proceso/sistema-de-trabajo-multiagente2.md`
-- `.github/AGENTS.md`
-- conversacion de investigacion sobre SDLC y agentes
+- `docs/proceso/template-sdlc-y-bootstrap-de-analisis.md`
+- `docs/proceso/consolidacion-documental-para-inicio-del-proyecto.md`
+- `docs/proceso/auditoria-de-personalizacion-y-brechas.md`
+- conversacion de diseno sobre plantilla reusable y bootstrap de analisis
 
 ## Salidas esperadas
 
-- agentes versionados y documentados
-- state manager simple basado en archivos
-- handoff contract reusable
-- actualizacion del mapa operativo del repo
-- validadores de `control-plane`, `drift`, trazabilidad de slice, trazabilidad por superficie y guardrails semanticos
-- primer slice pack de producto listo para ejecutar sobre `payment_order`
+- slice operativo nuevo y documentado
+- estrategia de bootstrap reusable versionada en el repo
+- rama de trabajo dedicada a la iniciativa
+- cola lista para introducir `OpenSpec`, skills de analisis y matriz de tools externas
 
 ## Validaciones
 
 - `npm run validate:control-plane`
 - `npm run validate:drift`
+- `npm run validate:docs-canonical`
+- `npm run validate:enhanced-research -- payment-order-bootstrap`
+- `npm run validate:openspec`
 - `npm run validate:slice-traceability`
 - `npm run validate:surface-traceability`
 - `npm run validate:semantic-guardrails`
 
 ## Gate humano
 
-- revisar si la separacion entre memoria normativa y memoria operativa resulta suficiente
-- confirmar si el siguiente paso sera memoria externa, enforcement mas profundo o semantica de producto mas rica
+- confirmar que el bootstrap siga siendo aditivo
+- confirmar el uso de `PasarelaDePago` como piloto antes de extraer el template a otro repo
+

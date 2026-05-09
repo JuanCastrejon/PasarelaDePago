@@ -1,0 +1,10 @@
+{
+  "name": "sdlc-agent-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate:docs-canonical": "node scripts/validate-docs-canonical.mjs",
+    "validate:enhanced-research": "node scripts/validate-enhanced-research.js",
+    "validate:openspec": "npx @fission-ai/openspec@latest validate --all"
+  }
+}

@@ -50,8 +50,8 @@ const warnings = [];
 const guardrailsPath = ".github/agents/semantic-guardrails.json";
 assert(exists(guardrailsPath), `Falta ${guardrailsPath}`, errors);
 assert(
-  exists("docs/agents/guardrails-semanticos-del-dominio1.md"),
-  "Falta docs/agents/guardrails-semanticos-del-dominio1.md",
+  exists("docs/agents/guardrails-semanticos-del-dominio.md"),
+  "Falta docs/agents/guardrails-semanticos-del-dominio.md",
   errors
 );
 
@@ -69,7 +69,7 @@ if (errors.length === 0) {
     assert(ruleIds.has(requiredRule), `Falta la regla ${requiredRule} en semantic-guardrails.json`, errors);
   }
 
-  const adr1 = read("docs/adr/adr-0001-verdad-asincrona-como-fuente-final1.md");
+  const adr1 = read("docs/adr/adr-0001-verdad-asincrona-como-fuente-final.md");
   const copilotInstructions = read(".github/copilot-instructions.md");
   const paymentArchitecture = read(".github/instructions/pagos-arquitectura.instructions.md");
   const paymentProviderAdapter = read("packages/payment-core/src/contracts/payment-provider-adapter.ts");
@@ -179,7 +179,7 @@ if (errors.length === 0) {
     errors
   );
 
-  const adr3 = read("docs/adr/adr-0003-adapters-de-proveedor-y-routing-desacoplado1.md");
+  const adr3 = read("docs/adr/adr-0003-adapters-de-proveedor-y-routing-desacoplado.md");
   const providerStatusMap = read("packages/payment-core/src/orchestration/provider-status-map.ts");
   assert(
     includesAll(adr3, ["provider adapters", "routing/orchestration engine"]),
@@ -205,7 +205,7 @@ if (errors.length === 0) {
     errors
   );
 
-  const semanticDocs = read("docs/agents/guardrails-semanticos-del-dominio1.md");
+  const semanticDocs = read("docs/agents/guardrails-semanticos-del-dominio.md");
   for (const label of [
     "La verdad final es asincrona",
     "`payment_order` y `payment_attempt` son entidades separadas",
@@ -246,3 +246,5 @@ if (warnings.length > 0) {
     console.log(`- ${warning}`);
   }
 }
+
+

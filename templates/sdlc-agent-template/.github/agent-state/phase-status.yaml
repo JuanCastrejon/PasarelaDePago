@@ -1,0 +1,12 @@
+version: 1
+current_track: "fundacional"
+current_slice: "template-bootstrap-v1"
+current_phase: "analisis"
+
+phase_owners:
+  definicion: "analista-openspec"
+  aseguramiento: "qa-security-review"
+
+control_plane:
+  planificacion: "planificador-opus"
+  orquestacion: "orquestador-opus"

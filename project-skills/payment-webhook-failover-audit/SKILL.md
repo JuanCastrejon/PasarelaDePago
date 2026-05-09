@@ -54,6 +54,9 @@ Use this skill when the task is not "integrate provider X" but "understand how p
 
 ## Project docs to consult or update
 
-- `docs/investigacion/webhooks-idempotencia-y-fallback1.md`
-- `docs/investigacion/resiliencia-failover-y-operacion1.md`
-- `docs/requisitos/requisitos-operativos-y-no-funcionales1.md`
+- `docs/investigacion/webhooks-idempotencia-y-fallback.md`
+- `docs/investigacion/resiliencia-failover-y-operacion.md`
+- `docs/requisitos/requisitos-operativos-y-no-funcionales.md`
+
+
+

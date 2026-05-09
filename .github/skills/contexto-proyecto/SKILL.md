@@ -9,10 +9,12 @@ description: "Carga el contexto operativo y de dominio de PasarelaDePago. Usar c
 
 1. Leer `.github/copilot-instructions.md`.
 2. Leer `CONTEXT.md`.
-3. Leer el indice maestro mas reciente.
-4. Si la tarea toca codigo, leer `docs/dominio/modelo-de-dominio-canonico1.md`.
-5. Si la tarea toca flujo del repo, leer `.github/AGENTS.md`.
-6. Si la tarea toca estructura del monorepo o stack, leer:
+3. Leer `indice-operativo.md`.
+4. Leer `docs/indice-maestro.md`.
+5. Si la tarea toca codigo, leer `docs/dominio/modelo-de-dominio-canonico.md`.
+6. Si la tarea toca flujo del repo, leer `.github/AGENTS.md`.
+7. Si la tarea toca comportamiento funcional no trivial, revisar `openspec/specs/` y `docs/guides/adopcion-openspec-sdd.md`.
+8. Si la tarea toca estructura del monorepo o stack, leer:
    - `references/stack-y-monorepo.md`
    - `references/convenciones.md`
    - `references/skills-y-fases.md`
@@ -21,6 +23,8 @@ description: "Carga el contexto operativo y de dominio de PasarelaDePago. Usar c
 
 - el proyecto es una plataforma de payment orchestration para Colombia
 - `PSE` y `Bre-B` son rieles importantes
+- el flujo oficial de analisis es `enrich-us -> validation -> OpenSpec -> commit`
 - el repositorio usa `feature/* -> develop -> main`
 - la documentacion es parte del producto
-- el monorepo actual vive en `apps/`, `packages/`, `supabase/` y `docs/`
+- el monorepo actual vive en `apps/`, `packages/`, `supabase/`, `docs/` y `openspec/`
+

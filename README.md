@@ -9,6 +9,7 @@ Hoy el repositorio ya tiene tres capas vivas:
 - `documentacion`: investigacion, dominio, requisitos, backlog, ADRs y slice packs
 - `gobierno`: `.github/`, skills internas, hooks, prompts, workflows y validaciones del control plane
 - `codigo`: monorepo con `apps/web`, `packages/payment-core`, `supabase/` y `tests/contract`
+- `OpenSpec`: `openspec/specs/` y `openspec/changes/` como capa canonica de analisis y cambio
 
 La parte mas nueva del proyecto es la construccion de un sistema de trabajo asistido por IA dentro del propio repo. La idea no es usar la IA como autocomplete, sino como un equipo de trabajo gobernado por artefactos, handoffs, trazabilidad y validacion humana final.
 
@@ -42,6 +43,7 @@ El modelo quedo asi:
 
 - `SDD`: disciplina personal para pensar y ejecutar con cuidado
 - `OpenSpec`: artefactos compartibles de requisitos, cambios y backlog
+- `analysis-first-sdd`: perfil OpenSpec del repo con `research` obligatorio
 - `Engram`: referencia conceptual para memoria operativa compartida
 - `Skills`: politicas, capacidades y criterios reutilizables
 - `Planificador Opus`: convierte ideas brutas en slices, riesgos, dependencias y cierre
@@ -125,6 +127,9 @@ Hoy el repo ya valida:
 
 - `npm run validate:control-plane`
 - `npm run validate:drift`
+- `npm run validate:docs-canonical`
+- `npm run validate:enhanced-research -- <change-name>`
+- `npm run validate:openspec`
 - `npm run validate:slice-traceability`
 - `npm run validate:surface-traceability`
 - `npm run validate:semantic-guardrails`
@@ -135,7 +140,7 @@ Estas validaciones no reemplazan testing ni code review humano, pero si ayudan a
 
 La primera slice preparada para llevar este sistema a codigo real ya esta documentada:
 
-- [Slice P0 - Payment Order Bootstrap](docs/backlog/slices/slice-payment-order-bootstrap1.md)
+- [Slice P0 - Payment Order Bootstrap](docs/backlog/slices/slice-payment-order-bootstrap.md)
 
 La intencion fue dejar primero la gobernanza lista y despues ejecutar la primera vertical de producto sobre una base mas controlada.
 
@@ -143,20 +148,21 @@ La intencion fue dejar primero la gobernanza lista y despues ejecutar la primera
 
 Si vienes a revisar especificamente el trabajo con IA, esta es la mejor secuencia:
 
-1. [Indice maestro](docs/indice-maestro2.md)
-2. [Sistema de trabajo multiagente v2](docs/proceso/sistema-de-trabajo-multiagente2.md)
-3. [Mapa de agentes y handoffs v1](docs/agents/mapa-de-agentes-y-handoffs1.md)
-4. [Matriz de trazabilidad por superficie v1](docs/agents/matriz-de-trazabilidad-por-superficie1.md)
-5. [Guardrails semanticos del dominio v1](docs/agents/guardrails-semanticos-del-dominio1.md)
-6. [Slice packs](docs/backlog/slices/README.md)
+1. [Indice maestro](docs/indice-maestro.md)
+2. [Indice operativo](indice-operativo.md)
+3. [Adopcion OpenSpec y SDD](docs/guides/adopcion-openspec-sdd.md)
+4. [Sistema de trabajo multiagente v2](docs/proceso/sistema-de-trabajo-multiagente.md)
+5. [Mapa de agentes y handoffs v1](docs/agents/mapa-de-agentes-y-handoffs.md)
+6. [Matriz de trazabilidad por superficie v1](docs/agents/matriz-de-trazabilidad-por-superficie.md)
+7. [Guardrails semanticos del dominio v1](docs/agents/guardrails-semanticos-del-dominio.md)
 
 Si quieres entender primero el producto y luego el sistema operativo:
 
 1. [CONTEXT.md](CONTEXT.md)
-2. [Vision y alcance](docs/requisitos/vision-y-alcance-del-producto1.md)
-3. [Glosario del dominio](docs/dominio/glosario-del-dominio1.md)
-4. [Modelo de dominio canonico](docs/dominio/modelo-de-dominio-canonico1.md)
-5. [Roadmap por fases](docs/backlog/roadmap-por-fases1.md)
+2. [Vision y alcance](docs/requisitos/vision-y-alcance-del-producto.md)
+3. [Glosario del dominio](docs/dominio/glosario-del-dominio.md)
+4. [Modelo de dominio canonico](docs/dominio/modelo-de-dominio-canonico.md)
+5. [Roadmap por fases](docs/backlog/roadmap-por-fases.md)
 
 ## Preguntas abiertas para feedback
 
@@ -180,6 +186,7 @@ La base de implementacion vive asi:
 - `tests/contract/`: base para pruebas de contrato y adapters
 - `.github/`: reglas, skills, prompts, CI, hooks, agentes y estado compartido
 - `.agents/workflows/`: workflows operativos del sistema multiagente
+- `openspec/`: capacidades canonicas y changes activos
 - `docs/`: fuente historica y versionada del conocimiento del proyecto
 
 ## Flujo operativo del repo
@@ -201,6 +208,8 @@ npm run typecheck
 npm run build
 npm run validate:control-plane
 npm run validate:drift
+npm run validate:docs-canonical
+npm run validate:openspec
 npm run validate:slice-traceability
 npm run validate:surface-traceability
 npm run validate:semantic-guardrails
@@ -209,3 +218,4 @@ npm run validate:semantic-guardrails
 ## Nota sobre memoria y modelos
 
 La vision del proyecto incluye colaboracion entre modelos, memoria compartida y auditoria cruzada, pero la fuente de verdad sigue viviendo en el repositorio. La memoria externa puede acelerar el trabajo, pero no debe reemplazar los artefactos versionados del proyecto.
+
